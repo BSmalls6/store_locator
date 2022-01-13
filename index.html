@@ -1,1481 +1,1973 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Locator</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
-    <style src="./style.css"></style>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-   
-   
-   <script>
+    <link href="style.css" rel="stylesheet">
+
+<script>
       const CONFIGURATION = {
-        "locations": [
-        {
-"title":"HEALTHY SPIRITS CORTLAND",
-"address":"249 CORTLAND AVE, SAN FRANCISCO, CA 94110",
-"coords":{
-"lat":37.7394614,
-"lng":-122.4186904}},
-{
-"title":"SEVEN ELEVEN 20473 (TARAVAL)",
-"address":"2222 TARAVAL ST, SAN FRANCISCO, CA 94116",
-"coords":{
-"lat":37.7427214,
-"lng":-122.490059577298}},
-{
-"title":"SEA BEE LIQUORS",
-"address":"3000 TARAVAL ST, SAN FRANCISCO, CA 94116",
-"coords":{
-"lat":37.7431539,
-"lng":-122.4734709}},
-{
-"title":"BROTHERS MINI MARKET",
-"address":"3845 NORIEGA ST, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7528253,
-"lng":-122.5052668}},
-{
-"title":"BREW VINO, SF",
-"address":"2706 24TH STREET, SAN FRANCISCO, CA 94110",
-"coords":{
-"lat":37.7530403387822,
-"lng":-122.40659539748}},
-{
-"title":"19TH AVENUE LIQUOR",
-"address":"1800 19TH AVE, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7541185,
-"lng":-122.476091406935}},
-{
-"title":"WESTERN SUNSET MARKET",
-"address":"4099 JUDAH ST, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7603023,
-"lng":-122.5057581}},
-{
-"title":"CHARLIE'S MARKET",
-"address":"3400 JUDAH ST, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7608786,
-"lng":-122.4985935}},
-{
-"title":"JUDAH 9TH AVE LIQUORS 2019",
-"address":"1400 9TH AVE, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7620559,
-"lng":-122.466045}},
-{
-"title":"EDDYS MARKET/COD",
-"address":"951 IRVING ST, SAN FRANCISCO, CA 94122",
-"coords":{
-"lat":37.7638269,
-"lng":-122.4683007}},
-{
-"title":"HEALTHY SPIRITS CASTRO",
-"address":"2299 15TH ST, SAN FRANCISCO, CA 94114",
-"coords":{
-"lat":37.7656552,
-"lng":-122.4353024}},
-{
-"title":"FLYING PIG BISTRO",
-"address":"433 S VAN NESS AVE, SAN FRANCISCO, CA 94103",
-"coords":{
-"lat":37.766319,
-"lng":-122.417422}},
-{
-"title":"HEALTHY SPIRITS VALENCIA",
-"address":"300 VALENCIA ST, SAN FRANCISCO, CA 94103",
-"coords":{
-"lat":37.7679143,
-"lng":-122.422397611069}},
-{
-"title":"HAIGHT COLE LIQUORS",
-"address":"1699 HAIGHT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7694214,
-"lng":-122.4505453}},
-{
-"title":"SUNSHINE LIQUORS",
-"address":"1754 HAIGHT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7695976,
-"lng":-122.4511723}},
-{
-"title":"SANTA CLARA NATURAL ORGANIC MKT",
-"address":"798 HAIGHT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7696673,
-"lng":-122.4496634}},
-{
-"title":"SUPERETTE MARKET_2",
-"address":"901 HAIGHT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7696673,
-"lng":-122.4496634}},
-{
-"title":"CEDAR DELI AND MARKET",
-"address":"1416 HAIGHT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7702885,
-"lng":-122.4457035}},
-{
-"title":"TEDS MARKET",
-"address":"1530 HOWARD ST, SAN FRANCISCO, CA 94103",
-"coords":{
-"lat":37.7728761,
-"lng":-122.416230474726}},
-{
-"title":"HAIGHT BOURBON SHOP",
-"address":"378 FILLMORE STREET, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.772945,
-"lng":-122.430492}},
-{
-"title":"KEY FOOD MARKET",
-"address":"501 FILLMORE ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7741397,
-"lng":-122.4309984}},
-{
-"title":"NEW STAR ELL LIQUOR",
-"address":"501 DIVISADERO ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7741729,
-"lng":-122.4378406}},
-{
-"title":"LUCINDA'S DELI & MORE/COD",
-"address":"535 SCOTT ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.7747967,
-"lng":-122.4361766}},
-{
-"title":"DENHARDS MARKET 2018",
-"address":"701 10TH AVE, SAN FRANCISCO, CA 94118",
-"coords":{
-"lat":37.7750476,
-"lng":-122.468281}},
-{
-"title":"BALBOA PRODUCE/COD",
-"address":"3635 BALBOA ST, SAN FRANCISCO, CA 94121",
-"coords":{
-"lat":37.7755582,
-"lng":-122.4978814}},
-{
-"title":"17TH AND BALBOA GROCERY/COD",
-"address":"1601 BALBOA ST, SAN FRANCISCO, CA 94121",
-"coords":{
-"lat":37.7765595,
-"lng":-122.4760759}},
-{
-"title":"HARVEST URBAN MARKET/COD",
-"address":"191 8TH ST, SAN FRANCISCO, CA 94103",
-"coords":{
-"lat":37.776632,
-"lng":-122.411975}},
-{
-"title":"GREEN EARTH NATURAL FOOD",
-"address":"860 DIVISADERO ST, SAN FRANCISCO, CA 94117",
-"coords":{
-"lat":37.777716,
-"lng":-122.43816}},
-{
-"title":"MARTELLS LIQUOR & GROCERY",
-"address":"5615 GEARY BLVD, SAN FRANCISCO, CA 94121",
-"coords":{
-"lat":37.7801369,
-"lng":-122.4797271}},
-{
-"title":"MAINLAND MARKET & PRODUCE",
-"address":"5601 GEARY BLVD, SAN FRANCISCO, CA 94121",
-"coords":{
-"lat":37.7801447,
-"lng":-122.4795405}},
-{
-"title":"STATE MARKET -GEARY/CASH ONLY",
-"address":"4751 GEARY BLVD, SAN FRANCISCO, CA 94118",
-"coords":{
-"lat":37.7808983469387,
-"lng":-122.470198397959}},
-{
-"title":"TIGERS LIQUORS",
-"address":"2400 CLEMENT ST, SAN FRANCISCO, CA 94121",
-"coords":{
-"lat":37.7821322,
-"lng":-122.485026}},
-{
-"title":"SOMA WINES SPIRITS",
-"address":"282 2ND ST, SAN FRANCISCO, CA 94105",
-"coords":{
-"lat":37.7856476923076,
-"lng":-122.396983384615}},
-{
-"title":"FRIENDS LIQUOR 2018/COD",
-"address":"1758 FILLMORE ST, SAN FRANCISCO, CA 94115",
-"coords":{
-"lat":37.7860068,
-"lng":-122.4331305}},
-{
-"title":"ZAINS LIQUOR",
-"address":"34 3RD ST, SAN FRANCISCO, CA 94103",
-"coords":{
-"lat":37.78703005,
-"lng":-122.403371849539}},
-{
-"title":"DISCOUNT GROCERS",
-"address":"1203 POLK ST, SAN FRANCISCO, CA 94109",
-"coords":{
-"lat":37.7876157027027,
-"lng":-122.420192729729}},
-{
-"title":"NOB HILL GENERAL STORE",
-"address":"1398 LEAVENWORTH ST, SAN FRANCISCO, CA 94109",
-"coords":{
-"lat":37.7930204,
-"lng":-122.4161325}},
-{
-"title":"RUTILYS MARKET",
-"address":"1700 FILBERT ST, SAN FRANCISCO, CA 94123",
-"coords":{
-"lat":37.7980395,
-"lng":-122.4356023}},
-{
-"title":"THE NATURE STOP",
-"address":"1336 GRANT AVE, SAN FRANCISCO, CA 94133",
-"coords":{
-"lat":37.7993922,
-"lng":-122.407129278012}},
-{
-"title":"MARINA SUPER",
-"address":"2323 CHESTNUT ST, SAN FRANCISCO, CA 94123",
-"coords":{
-"lat":37.8000223,
-"lng":-122.4416127}},
-{
-"title":"RED DRAGON YOGA MV",
-"address":"438 MILLER AVE, MILL VALLEY, CA 94941",
-"coords":{
-"lat":37.8960158601282,
-"lng":-122.535501422791}},
-{
-"title":"DONS LIQUORS",
-"address":"18 BRIGHTON AVE, BOLINAS, CA 94924",
-"coords":{
-"lat":37.9085868079862,
-"lng":-122.687189085873}},
-{
-"title":"COAST CAFE",
-"address":"46 WHARF RD, BOLINAS, CA 94924",
-"coords":{
-"lat":37.9100923522924,
-"lng":-122.684297270893}},
-{
-"title":"BOLINAS MARKET",
-"address":"40 WHARF RD, BOLINAS, CA 94924",
-"coords":{
-"lat":37.910161615166,
-"lng":-122.684606407395}},
-{
-"title":"PETERS BEACON",
-"address":"108 BELLAM BLVD, SAN RAFAEL, CA 94901",
-"coords":{
-"lat":37.96064533261,
-"lng":-122.504481052706}},
-{
-"title":"UNITED MARKET SR",
-"address":"515 THIRD ST, SAN RAFAEL, CA 94901",
-"coords":{
-"lat":37.970940407352,
-"lng":-122.519251486337}},
-{
-"title":"RED DRAGON YOGA SR",
-"address":"1701 4TH ST, SAN RAFAEL, CA 94901",
-"coords":{
-"lat":37.974003,
-"lng":-122.537579}},
-{
-"title":"UNITED MARKET S ANSELMO",
-"address":"100 RED HILL AVE, SAN ANSELMO, CA 94960",
-"coords":{
-"lat":37.9769358,
-"lng":-122.5534189}},
-{
-"title":"QUICK N EASY",
-"address":"807 SAN ANSELMO AVE, SAN ANSELMO, CA 94960",
-"coords":{
-"lat":37.9769770588235,
-"lng":-122.565014058823}},
-{
-"title":"G LIQUOR WINE AND GROCERY",
-"address":"1910 SIR FRANCIS DRAKE BLVD, FAIRFAX, CA 94930",
-"coords":{
-"lat":37.987432,
-"lng":-122.588411}},
-{
-"title":"PERRY'S DELI #3",
-"address":"1916 SIR FRANCIS DRAKE BLVD, FAIRFAX, CA 94930",
-"coords":{
-"lat":37.9874551511797,
-"lng":-122.589154877574}},
-{
-"title":"LIQUOR LAND",
-"address":"274 NORTHGATE DR, SAN RAFAEL, CA 94903",
-"coords":{
-"lat":38.001017355064,
-"lng":-122.544171932935}},
-{
-"title":"HEARTBEAT CAFE_2",
-"address":"99 MONTECILLO RD, SAN RAFAEL, CA 94903",
-"coords":{
-"lat":38.00466675,
-"lng":-122.555113356917}},
-{
-"title":"SEVENTY-SIX GAS TERRA LINDA",
-"address":"921 DEL PRESIDIO BLVD, SAN RAFAEL, CA 94903",
-"coords":{
-"lat":38.0067523027904,
-"lng":-122.544596145376}},
-{
-"title":"SMITH RANCH DELI",
-"address":"101 SMITH RANCH RD, SAN RAFAEL, CA 94903",
-"coords":{
-"lat":38.0196676852502,
-"lng":-122.534547139376}},
-{
-"title":"FARMHOUSE dba DUE WEST",
-"address":"10005 HWY 1, OLEMA, CA 94950",
-"coords":{
-"lat":38.0403158236422,
-"lng":-122.787149476212}},
-{
-"title":"INVERNESS PARK MARKET",
-"address":"12301 SIR FRANCIS DRAKE BLVD, INVERNESS, CA 94937",
-"coords":{
-"lat":38.0636346139611,
-"lng":-122.810777609248}},
-{
-"title":"FORKS FINGERS DELI",
-"address":"372 BEL MARIN KEYS BLVD, NOVATO, CA 94949",
-"coords":{
-"lat":38.0749394246066,
-"lng":-122.537807425378}},
-{
-"title":"MATT & JEFFS CAR WASH/COD",
-"address":"125 VINTAGE WAY, NOVATO, CA 94945",
-"coords":{
-"lat":38.0864026457339,
-"lng":-122.550275122499}},
-{
-"title":"SEVEN ELEVEN 14143 (NOVATO)",
-"address":"800 DIABLO AVE, NOVATO, CA 94947",
-"coords":{
-"lat":38.100405,
-"lng":-122.57515}},
-{
-"title":"NOVATO U SAVE LIQUORS",
-"address":"1535 S NOVATO BLVD, NOVATO, CA 94947",
-"coords":{
-"lat":38.1034481014642,
-"lng":-122.573552090006}},
-{
-"title":"JERRY'S DELICATESSAN",
-"address":"7380 REDWOOD BLVD, NOVATO, CA 94965",
-"coords":{
-"lat":38.108134,
-"lng":-122.569899}},
-{
-"title":"TAGLIAFERRI DELICATESSEN",
-"address":"1763-1765 GRANT AVE, NOVATO, CA 94945",
-"coords":{
-"lat":38.1094819285714,
-"lng":-122.582344785714}},
-{
-"title":"CHARLEYS DELI & LIQUORS",
-"address":"601 PETALUMA BLVD S, PETALUMA, CA 94952",
-"coords":{
-"lat":38.230582,
-"lng":-122.631702}},
-{
-"title":"RIVER FRONT CAFE",
-"address":"224 B ST, PETALUMA, CA 94952",
-"coords":{
-"lat":38.2338251059076,
-"lng":-122.639015225545}},
-{
-"title":"BROADWAY MARKET",
-"address":"20511 BROADWAY, SONOMA, CA 95476",
-"coords":{
-"lat":38.275423,
-"lng":-122.460889}},
-{
-"title":"PICAZO CAFE & DELI",
-"address":"19100 ARNOLD DR #A, SONOMA, CA 95476",
-"coords":{
-"lat":38.297772,
-"lng":-122.491426}},
-{
-"title":"THE SMALL WORLD MARKET",
-"address":"932 COOMBS ST, NAPA, CA 94559",
-"coords":{
-"lat":38.2983545918367,
-"lng":-122.286619428571}},
-{
-"title":"DOMINICS GENOVA DELI",
-"address":"1550 TRANCAS ST, NAPA, CA 94558",
-"coords":{
-"lat":38.3223029411764,
-"lng":-122.303346705882}},
-{
-"title":"COTATI CHEVRON GAS FOOD",
-"address":"766 E COTATI AVE, COTATI, CA 94931",
-"coords":{
-"lat":38.3305713367115,
-"lng":-122.694535031726}},
-{
-"title":"PELICAN PLAZA GROCERY & DELI/COD/TEMP",
-"address":"1400 HIGHWAY 1, BODEGA BAY, CA 94923",
-"coords":{
-"lat":38.3338071765389,
-"lng":-123.048252257211}},
-{
-"title":"DIEKMANNS BAY STORE",
-"address":"1275 HWY 1, BODEGA BAY, CA 94923",
-"coords":{
-"lat":38.33406,
-"lng":-123.048621}},
-{
-"title":"A L MARKET",
-"address":"1435 E COTATI AVE, ROHNERT PARK, CA 94928",
-"coords":{
-"lat":38.3344631965754,
-"lng":-122.687431178067}},
-{
-"title":"U-SAVE LIQUOR COTATI",
-"address":"7500 COMMERCE BLVD, COTATI, CA 94931",
-"coords":{
-"lat":38.334526,
-"lng":-122.712345}},
-{
-"title":"RANCH MARKET",
-"address":"4215 SOLANO AVE, NAPA, CA 94558",
-"coords":{
-"lat":38.3361707292404,
-"lng":-122.322530240161}},
-{
-"title":"SONOMA SOURDOUGH (RP)",
-"address":"5440 STATE FARM DR, ROHNERT PARK, CA 94928",
-"coords":{
-"lat":38.3567918783477,
-"lng":-122.709488524881}},
-{
-"title":"COUNTRY WINE & LIQUOR",
-"address":"865 GRAVENSTEIN HWY, SEBASTOPOL, CA 95472",
-"coords":{
-"lat":38.3911886,
-"lng":-122.8168206}},
-{
-"title":"RANCH MARKET TOO",
-"address":"6498 WASHINGTON ST, YOUNTVILLE, CA 94599",
-"coords":{
-"lat":38.401066,
-"lng":-122.35999}},
-{
-"title":"SEBASTOPOL LIQUOR DELI",
-"address":"6800 SEBASTOPOL AVE, SEBASTOPOL, CA 95472",
-"coords":{
-"lat":38.4025876271613,
-"lng":-122.821284137199}},
-{
-"title":"PACIFIC MARKET #1",
-"address":"550 GRAVENSTEIN HWY N, SEBASTOPOL, CA 95472",
-"coords":{
-"lat":38.4056261,
-"lng":-122.8380252}},
-{
-"title":"KENWOOD MARKET",
-"address":"8910 SONOMA HWY #A, KENWOOD, CA 95452",
-"coords":{
-"lat":38.4190235,
-"lng":-122.5518182}},
-{
-"title":"ANDYS PRODUCE FRUIT BASKET",
-"address":"1691 GRAVENSTEIN HWY N, SEBASTOPOL, CA 95472",
-"coords":{
-"lat":38.4210934,
-"lng":-122.845519442954}},
-{
-"title":"SEBASTOPOL UNION 76 / 7-11 #39331",
-"address":"370 SEBASTOPOL RD, SANTA ROSA, CA 95401",
-"coords":{
-"lat":38.4251339,
-"lng":-122.7634808}},
-{
-"title":"MD LIQUOR AND FOOD #4",
-"address":"2743 YULUPA AVE, SANTA ROSA, CA 95405",
-"coords":{
-"lat":38.4267125,
-"lng":-122.6685544}},
-{
-"title":"SUPER LATINO MARKET BAKERY",
-"address":"1701 SEBASTOPOL RD, SANTA ROSA, CA 95407",
-"coords":{
-"lat":38.427704,
-"lng":-122.7385044}},
-{
-"title":"LAZZINIS BENNETT VALLEY MARKET/CLOSED",
-"address":"3449 BENNETT VALLEY RD, SANTA ROSA, CA 95404",
-"coords":{
-"lat":38.43147,
-"lng":-122.679861}},
-{
-"title":"CS GROCERY",
-"address":"419 STONY POINT ROAD, SANTA ROSA, CA 95401",
-"coords":{
-"lat":38.4320551,
-"lng":-122.742564}},
-{
-"title":"MD LIQUOR FOOD #7",
-"address":"9050 GRATON RD, GRATON, CA 95444",
-"coords":{
-"lat":38.43654505,
-"lng":-122.869399399999}},
-{
-"title":"CRYSTALS CORNER",
-"address":"1185 YULUPA AVE, SANTA ROSA, CA 95405",
-"coords":{
-"lat":38.4422002,
-"lng":-122.6747213}},
-{
-"title":"BENTON MARKET",
-"address":"801 BENTON ST, SANTA ROSA, CA 95404",
-"coords":{
-"lat":38.44790245,
-"lng":-122.713198348296}},
-{
-"title":"SAMS MARKET #12",
-"address":"3088 MARLOW RD, SANTA ROSA, CA 95403",
-"coords":{
-"lat":38.4668771,
-"lng":-122.7501873}},
-{
-"title":"INCHOS CAFE",
-"address":"401 BICENTENNIAL WAY, SANTA ROSA, CA 95403",
-"coords":{
-"lat":38.4718156499999,
-"lng":-122.727193150821}},
-{
-"title":"LARKFIELD LIQUOR AND DELI/COD",
-"address":"4777 OLD REDWOOD HWY, SANTA ROSA, CA 95403",
-"coords":{
-"lat":38.4845976,
-"lng":-122.7349454}},
-{
-"title":"LARKFIELD UNION 76",
-"address":"4605 OLD REDWOOD HWY, SANTA ROSA, CA 95403",
-"coords":{
-"lat":38.4845976,
-"lng":-122.7349454}},
-{
-"title":"SPEERS MARKET",
-"address":"7891 MIRABEL RD, FORESTVILLE, CA 95436",
-"coords":{
-"lat":38.489766949324,
-"lng":-122.894934929684}},
-{
-"title":"FULTON MARKET",
-"address":"1150 RIVER RD, FULTON, CA 95439",
-"coords":{
-"lat":38.4964691423486,
-"lng":-122.770578532228}},
-{
-"title":"BAD ASS COFFEE 2019",
-"address":"90 MARK WEST SPRINGS RD, SANTA ROSA, CA 95403",
-"coords":{
-"lat":38.496606,
-"lng":-122.7486617}},
-{
-"title":"GUERNEVILLE LIQUORS",
-"address":"16297 MAIN ST, GUERNEVILLE, CA 95446",
-"coords":{
-"lat":38.5017965,
-"lng":-122.998549038379}},
-{
-"title":"LAMBERTS 76 LLC",
-"address":"16383 MAIN ST, GUERNEVILLE, CA 95446",
-"coords":{
-"lat":38.5019573,
-"lng":-123.0017974}},
-{
-"title":"MD LIQUOR FOOD #8",
-"address":"16316 MAIN ST, GUERNEVILLE, CA 95446",
-"coords":{
-"lat":38.5019573,
-"lng":-123.0017974}},
-{
-"title":"QUICK SHOP DELI/COD",
-"address":"8197 OLD REDWOOD HWY, WINDSOR, CA 95492",
-"coords":{
-"lat":38.540912,
-"lng":-122.795741}},
-{
-"title":"FAST & EASY MART WINDSOR",
-"address":"8916 BROOKS RD S, WINDSOR, CA 95492",
-"coords":{
-"lat":38.5559667915993,
-"lng":-122.807295752742}},
-{
-"title":"CALMART CALISTOGA",
-"address":"1491 LINCOLN AVE, CALISTOGA, CA 94515",
-"coords":{
-"lat":38.5798733809523,
-"lng":-122.578523761904}},
-{
-"title":"CITRUS SPIRTS AND MARKET",
-"address":"421 S. CLOVERDALE BLVD, CLOVERDALE, CA 95425",
-"coords":{
-"lat":38.7979304998985,
-"lng":-123.018648625973}},
-{
-"title":"FOODS ETC",
-"address":"15290 LAKESHORE DR, CLEARLAKE, CA 95422",
-"coords":{
-"lat":38.95034805,
-"lng":-122.627058335437}},
-{
-"title":"BOONT BERRY FARM",
-"address":"13981 HWY 128, BOONVILLE, CA 95415",
-"coords":{
-"lat":39.043242,
-"lng":-123.405288}},
-{
-"title":"PROVISION MART",
-"address":"6130 N STATE ST, CALPELLA, CA 95418",
-"coords":{
-"lat":39.2320035557446,
-"lng":-123.203197942522}},
-{
-"title":"REDWOOD VALLEY MARKET",
-"address":"999 E SCHOOL WAY, REDWOOD VALLEY, CA 95470",
-"coords":{
-"lat":39.265127,
-"lng":-123.204225}},
-{
-"title":"KARKAR'S DELI",
-"address":"25287 SHERWOOD RD, WILLITS, CA 95490",
-"coords":{
-"lat":39.4436451318478,
-"lng":-123.382673499681}},
-{
-"title":"SPEEDEX GASOLINE",
-"address":"863 N MAIN ST, FORT BRAGG, CA 95437",
-"coords":{
-"lat":39.4512936734693,
-"lng":-123.805965}},
-{
-"title":"GEIGERS LONG VALLEY MARKET 2019",
-"address":"44951 HIGHWAY 101, LAYTONVILLE, CA 95454",
-"coords":{
-"lat":39.6869423262782,
-"lng":-123.482106313607}},
-{
-"title":"BERRYVALE",
-"address":"305 S Mt Shasta Blvd, Mt Shasta,  CA 96067",
-"coords":{
-"lat":41.3110550612244,
-"lng":-122.311115040816}},
-{
-"title":"DIGGIN' LIVIN' FARM AND APIARIES",
-"address":"143 Redwood Hwy, Cave Junction, OR 97523",
-"coords":{
-"lat":42.1594702,
-"lng":-123.6478983}},
-{
-"title":"SHOP N KART",
-"address":"2268 Ashland St, Ashland, Ashland, OR 97520",
-"coords":{
-"lat":42.1852794827586,
-"lng":-122.672398034482}},
-{
-"title":"VIDA BAKING",
-"address":"149 N Pioneer St, Ashland, OR 97520",
-"coords":{
-"lat":42.1978505714285,
-"lng":-122.713362693877}},
-{
-"title":"ASHLAND CO-OP",
-"address":"237 N 1st St, Ashland, OR 97520",
-"coords":{
-"lat":42.1988509,
-"lng":-122.71162078576}},
-{
-"title":"TAKUBEH FARM & GARDEN",
-"address":"20690 Williams Hwy, Williams, OR 97544",
-"coords":{
-"lat":42.219709140596,
-"lng":-123.273294528587}},
-{
-"title":"WILLIAMS GENERAL STORE",
-"address":"20180 Williams Hwy, Williams, OR 97544",
-"coords":{
-"lat":42.224759,
-"lng":-123.26961}},
-{
-"title":"APPLEGATE STORE",
-"address":"15095 OR-238, Applegate, OR 97530",
-"coords":{
-"lat":42.2559965614763,
-"lng":-123.168261866924}},
-{
-"title":"RUCH COUNTRY STORE",
-"address":"7350 OR-238, Jacksonville, OR 97530",
-"coords":{
-"lat":42.3137554,
-"lng":-122.9658661}},
-{
-"title":"MEDFORD COOP (CUSTOMER)",
-"address":"945 S Riverside Ave, Medford, OR 97501",
-"coords":{
-"lat":42.3178936,
-"lng":-122.8632690275}},
-{
-"title":"FOOD 4 LESS (AKA SHERM'S)",
-"address":"2230 Biddle Rd., Medford, OR 97504",
-"coords":{
-"lat":42.3508166130653,
-"lng":-122.875003907035}},
-{
-"title":"HIDDEN VALLEY MARKET",
-"address":"7200 Williams Hwy, Grants Pass, OR 97527",
-"coords":{
-"lat":42.4128181,
-"lng":-123.343392}},
-{
-"title":"WHISTLING DUCK FARM STORE",
-"address":"12800 Williams Hwy, Grants Pass, OR 97527",
-"coords":{
-"lat":42.4128181,
-"lng":-123.343392}},
-{
-"title":"GOOSEBERRIES",
-"address":"1201 Redwood Ave, Grants Pass, OR 97526",
-"coords":{
-"lat":42.4217379,
-"lng":-123.3511287}},
-{
-"title":"CARTWRIGHTS VALLEY MEAT CO.",
-"address":"825 Union Ave, Grants Pass, OR 97527",
-"coords":{
-"lat":42.4218070612244,
-"lng":-123.346892489795}},
-{
-"title":"CASABLANCA COFFEE & GRILL",
-"address":"686 Union Ave, Grants Pass, OR 97527",
-"coords":{
-"lat":42.422475947138,
-"lng":-123.343067010941}},
-{
-"title":"GRANTS PASS FARMERS MARKET",
-"address":"295 NW F Street, Grants Pass, OR 97526",
-"coords":{
-"lat":42.4407120537822,
-"lng":-123.328869553656}},
-{
-"title":"COAST FORK FARM STAND",
-"address":"90 S 10th St, Cottage Grove, OR 97424",
-"coords":{
-"lat":43.7968840408163,
-"lng":-123.058055}},
-{
-"title":"FRIENDLY STREET MARKET",
-"address":"2757 Friendly St, Eugene, OR 97405",
-"coords":{
-"lat":44.0284077,
-"lng":-123.105194474387}},
-{
-"title":"CAPELLAS MARKET",
-"address":"2489 Willamette St, Eugene, OR 97405",
-"coords":{
-"lat":44.0316016226871,
-"lng":-123.090591455221}},
-{
-"title":"SUNDANCE NATURAL FOODS",
-"address":"748 E 24th Ave, Eugene, OR 97405",
-"coords":{
-"lat":44.0331596,
-"lng":-123.0813553}},
-{
-"title":"KIVA",
-"address":"125 W 11th Ave, Eugene, OR 97401",
-"coords":{
-"lat":44.04779,
-"lng":-123.094856}},
-{
-"title":"RED BARN",
-"address":"357 Van Buren St, Eugene, OR 97402",
-"coords":{
-"lat":44.0559337,
-"lng":-123.1092447}},
-{
-"title":"OCEANA NATURAL FOOD COOPERATIVE",
-"address":"159 SE 2nd St, Newport, OR 97365",
-"coords":{
-"lat":44.6350140785766,
-"lng":-124.051582367317}},
-{
-"title":"LIFESOURCE NATURAL FOODS (AKA BEAMER'S)",
-"address":"2649 Commercial St SE, Salem, OR 97302",
-"coords":{
-"lat":44.915351,
-"lng":-123.045181}},
-{
-"title":"QFC:QFC #202",
-"address":"7525 SW BARNES RD, PORTLAND, OR 97225",
-"coords":{
-"lat":45.5155251,
-"lng":-122.7549112}},
-{
-"title":"QFC:QFC #205",
-"address":"5544 EAST BURNSIDE ST, PORTLAND, OR 97215",
-"coords":{
-"lat":45.5227974489795,
-"lng":-122.606989714285}},
-{
-"title":"QFC:QFC #212",
-"address":"3505 SE 192ND AVE, VANCOUVER, WA 98683",
-"coords":{
-"lat":45.59471625,
-"lng":-122.476299852063}},
-{
-"title":"GOOD HEALTH NUTRITION CENTER",
-"address":"503 Harrison Ave, Centralia, WA 98531",
-"coords":{
-"lat":46.7222192208057,
-"lng":-122.969093168791}},
-{
-"title":"SCHWARTZ'S",
-"address":"124 4th Ave E, Olympia, WA 98501",
-"coords":{
-"lat":47.0450082874254,
-"lng":-122.901287221825}},
-{
-"title":"PARKSIDE CAFE",
-"address":"1909 Harrison Ave NW, Olympia, WA 98502",
-"coords":{
-"lat":47.0459589795918,
-"lng":-122.925014408163}},
-{
-"title":"RALPH'S THRIFTWAY",
-"address":"1908 4th Ave E, Olympia, WA 98506",
-"coords":{
-"lat":47.0461325555555,
-"lng":-122.875148555555}},
-{
-"title":"BLUE HERON BAKERY",
-"address":"4419 Harrison Ave NW, Olympia, WA 98502",
-"coords":{
-"lat":47.0462778,
-"lng":-122.9581249}},
-{
-"title":"BATDORF & BRONSON COFFEE ROASTERS:DANCING GOATS COFFEE BAR TACOMA",
-"address":"200 Market St NE, Olympia, WA 98501",
-"coords":{
-"lat":47.0508088,
-"lng":-122.9008097}},
-{
-"title":"PROVIDENCE HOSP-ST PETER",
-"address":"413 Lilly Rd NE, Olympia, WA 98506",
-"coords":{
-"lat":47.0524331,
-"lng":-122.847426160933}},
-{
-"title":"OLYMPIA FOOD COOP WEST",
-"address":"921 Rogers St NW, Olympia, WA 98502",
-"coords":{
-"lat":47.0533411,
-"lng":-122.9190031}},
-{
-"title":"SAN FRANCISCO BAKERY - OLYMPIA",
-"address":"1320 San Francisco Ave NE, Olympia, WA 98506",
-"coords":{
-"lat":47.0573638,
-"lng":-122.885196}},
-{
-"title":"NOMAD PNW",
-"address":"529 Church St, Wilkeson, WA 98396",
-"coords":{
-"lat":47.1048370974227,
-"lng":-122.045778832146}},
-{
-"title":"H & L PRODUCE",
-"address":"7320 Lakewood Dr W, Lakewood, WA 98499",
-"coords":{
-"lat":47.1916413458296,
-"lng":-122.508889819274}},
-{
-"title":"VALLEY FARMS",
-"address":"5728 River Rd E, Puyallup, WA 98371",
-"coords":{
-"lat":47.2095681,
-"lng":-122.3322677}},
-{
-"title":"STADIUM THRIFTWAY",
-"address":"618 N 1st St, Tacoma, WA 98403",
-"coords":{
-"lat":47.2643278979591,
-"lng":-122.448512265306}},
-{
-"title":"MET MARKET PROCTOR",
-"address":"2420 N Proctor St, Tacoma, WA 98406",
-"coords":{
-"lat":47.2694876,
-"lng":-122.489729373628}},
-{
-"title":"TACOMA CO-OP",
-"address":"4502 N Pearl St, Tacoma, WA 98407",
-"coords":{
-"lat":47.2900403673469,
-"lng":-122.515878918367}},
-{
-"title":"TACOMA FOOD CO-OP",
-"address":"4502 N Pearl St, Tacoma, WA 98407",
-"coords":{
-"lat":47.2900403673469,
-"lng":-122.515878918367}},
-{
-"title":"QFC:QFC #831",
-"address":"4101 49TH AVE NE, Tacoma, WA 98422",
-"coords":{
-"lat":47.293847,
-"lng":-122.38204}},
-{
-"title":"MET MARKET GIG HARBOR",
-"address":"5010 Point Fosdick Dr, Gig Harbor, WA 98335",
-"coords":{
-"lat":47.3029807777777,
-"lng":-122.579327888888}},
-{
-"title":"QFC:QFC #837",
-"address":"22131 SE 237TH STREET, Maple Valley, WA 98038",
-"coords":{
-"lat":47.3880453,
-"lng":-122.045011079252}},
-{
-"title":"QFC:QFC #805",
-"address":"17847 1st Ave S, Burien, WA 98148",
-"coords":{
-"lat":47.4327507,
-"lng":-122.3356094}},
-{
-"title":"REFUEL CAFE",
-"address":"401 OLYMPIA AVE NE, RENTON, WA 98056",
-"coords":{
-"lat":47.4891439,
-"lng":-122.172379587905}},
-{
-"title":"QFC:QFC #829",
-"address":"460 EAST NORTH BEND WAY, NORTH BEND, WA 98045",
-"coords":{
-"lat":47.4932874,
-"lng":-121.780526954652}},
-{
-"title":"WILDWOOD MARKET",
-"address":"9214 45TH AVE SW, Seattle, WA 98146",
-"coords":{
-"lat":47.5209493,
-"lng":-122.3900124}},
-{
-"title":"HIGHLAND PARK CORNER STORE",
-"address":"7789 HIGHLAND PARK WAY SW, Seattle, WA 98106",
-"coords":{
-"lat":47.5321137,
-"lng":-122.347104000419}},
-{
-"title":"QFC:QFC #827",
-"address":"6940 Coal Creek Pkwy SE, Newcastle, WA 98059",
-"coords":{
-"lat":47.539144,
-"lng":-122.1658}},
-{
-"title":"QFC:QFC #806",
-"address":"8421 SE 68TH STREET, Mercer Island, WA 98040",
-"coords":{
-"lat":47.5419621544899,
-"lng":-122.226743791458}},
-{
-"title":"WEST SEATTLE THRIFTWAY",
-"address":"4201 SW Morgan St, Seattle, WA 98136",
-"coords":{
-"lat":47.5447063,
-"lng":-122.387010594463}},
-{
-"title":"QFC:QFC #821",
-"address":"1540 NW GILMAN BLVD, Issaquah, WA 98027",
-"coords":{
-"lat":47.54655725,
-"lng":-122.060388031134}},
-{
-"title":"PCC:ISSAQUAH #100",
-"address":"1810 12TH AVE NW, Issaquah, WA 98027",
-"coords":{
-"lat":47.5516685,
-"lng":-122.056528}},
-{
-"title":"OLYMPIA COFFEE COLUMBIA CITY",
-"address":"4824 RAINIER AVE S, Seattle, WA 98118",
-"coords":{
-"lat":47.5587714,
-"lng":-122.285298}},
-{
-"title":"PCC:COLUMBIA CITY #150",
-"address":"3610 S. EDMUNDS ST., Seattle, WA 98118",
-"coords":{
-"lat":47.5589369,
-"lng":-122.2868536}},
-{
-"title":"QFC:QFC #883",
-"address":"4550 42ND AVENUE SW, Seattle, WA 98116",
-"coords":{
-"lat":47.5613693,
-"lng":-122.3852393}},
-{
-"title":"QFC:QFC #840",
-"address":"4570 Klahanie Dr SE, Issaquah, WA 98029",
-"coords":{
-"lat":47.5655558,
-"lng":-122.0034138}},
-{
-"title":"SEQUENTIAL RETAIL STATION #1",
-"address":"4034 W Marginal Way SW, Seattle, WA 98106",
-"coords":{
-"lat":47.5676316499999,
-"lng":-122.353033135922}},
-{
-"title":"QFC:QFC #822",
-"address":"3520 FACTORIA BLVD, Bellevue, WA 98006",
-"coords":{
-"lat":47.5745986,
-"lng":-122.1695084}},
-{
-"title":"PCC:WEST SEATTLE #60",
-"address":"2749 CALIFORNIA SW, Seattle, WA 98116-2405",
-"coords":{
-"lat":47.57746005,
-"lng":-122.387083060786}},
-{
-"title":"QFC:QFC #849",
-"address":"2707 RAINIER AVE SOUTH, Seattle, WA 98144",
-"coords":{
-"lat":47.5787483,
-"lng":-122.2998367}},
-{
-"title":"MET MARKET ADMIRAL",
-"address":"2320 42nd Ave SW, Seattle, WA 98116",
-"coords":{
-"lat":47.58214135,
-"lng":-122.384778829647}},
-{
-"title":"QFC:QFC #824",
-"address":"2902 228TH AVE SE, Sammamish, WA 98027",
-"coords":{
-"lat":47.5840169395494,
-"lng":-122.035427326513}},
-{
-"title":"MET MARKET MERCER ISLAND",
-"address":"2755 77th Ave SE, Mercer Island, WA 98040",
-"coords":{
-"lat":47.5860286921947,
-"lng":-122.235156830318}},
-{
-"title":"SEATTLE BOULDERING PROJECT",
-"address":"900 Poplar Pl S, Seattle, WA 98144",
-"coords":{
-"lat":47.5936174,
-"lng":-122.3109124}},
-{
-"title":"QFC:QFC #874",
-"address":"1510 145TH PL SE, Bellevue, WA 98007",
-"coords":{
-"lat":47.5968855,
-"lng":-122.148495782711}},
-{
-"title":"CONE & STEINER - PIONEER SQ.",
-"address":"135 S King St, Seattle, WA 98104",
-"coords":{
-"lat":47.5981384,
-"lng":-122.3325143}},
-{
-"title":"CAFFE UMBRIA:OCCIDENTAL",
-"address":"320 Occidental Ave S, Seattle, WA 98104",
-"coords":{
-"lat":47.5993857,
-"lng":-122.332689}},
-{
-"title":"STOCKBOX",
-"address":"901 JAMES ST, Seattle, WA 98104",
-"coords":{
-"lat":47.6055194,
-"lng":-122.3244163}},
-{
-"title":"MET MARKET SAMMAMISH",
-"address":"301 228th Ave SE, Sammamish, WA 98074",
-"coords":{
-"lat":47.606008,
-"lng":-122.0360175}},
-{
-"title":"HILLTOP DELI",
-"address":"800 Seneca St, Seattle, WA 98101",
-"coords":{
-"lat":47.6095652,
-"lng":-122.3297117}},
-{
-"title":"SEATTLE U. SIDEBAR",
-"address":"901 12th Ave, Seattle, WA 98122",
-"coords":{
-"lat":47.61065225,
-"lng":-122.317137029669}},
-{
-"title":"SEATTLE UNIVERSITY",
-"address":"901 12th Ave, Seattle, WA 98122",
-"coords":{
-"lat":47.61065225,
-"lng":-122.317137029669}},
-{
-"title":"SEA U. CONVERGENT ZONE",
-"address":"901 12th Ave, Seattle, WA 98122",
-"coords":{
-"lat":47.61065225,
-"lng":-122.317137029669}},
-{
-"title":"PCC:CENTRAL DISTRICT #24",
-"address":"2230 E Union St, Seattle, WA 98122",
-"coords":{
-"lat":47.6131191,
-"lng":-122.3029763}},
-{
-"title":"PCC:BELLEVUE",
-"address":"11615 NE 4TH STREET, Bellevue, WA 98004",
-"coords":{
-"lat":47.6137465,
-"lng":-122.2004299}},
-{
-"title":"NEW TOWN MARKET",
-"address":"2801 Western Ave # B, Seattle, WA 98121",
-"coords":{
-"lat":47.6156889,
-"lng":-122.3527294}},
-{
-"title":"QFC:QFC #808",
-"address":"10116 NE 8TH STREET, Bellevue, WA 98004",
-"coords":{
-"lat":47.61863475,
-"lng":-122.205366705682}},
-{
-"title":"QFC:QFC #826",
-"address":"15600 NE 8TH STREET, Bellevue, WA 98008",
-"coords":{
-"lat":47.61995065,
-"lng":-122.12867941496}},
-{
-"title":"OVERLAKE HOSPITAL",
-"address":"1035 116th Ave NE, Bellevue, WA 98004",
-"coords":{
-"lat":47.6211869,
-"lng":-122.186956204506}},
-{
-"title":"STELLA DELI AND MARKET",
-"address":"300 2nd Ave W, Seattle, WA 98119",
-"coords":{
-"lat":47.6213118,
-"lng":-122.3591287}},
-{
-"title":"OVERLAKE HOSP-ATRIUM CAFE",
-"address":"1135 116th Ave NE, Bellevue, WA 98004",
-"coords":{
-"lat":47.6221991428571,
-"lng":-122.185553142857}},
-{
-"title":"LOVE AND FLOUR",
-"address":"2719 E Madison St, Seattle, WA 98112",
-"coords":{
-"lat":47.6228645,
-"lng":-122.2964914}},
-{
-"title":"LOCAL COFFEE SPOT - FAIRVIEW",
-"address":"500 Fairview Ave N, Seattle, WA 98109",
-"coords":{
-"lat":47.6232737,
-"lng":-122.3340524}},
-{
-"title":"CONE & STEINER - CAPITAL HILL",
-"address":"532 19th Ave E, Seattle, WA 98112",
-"coords":{
-"lat":47.6240701,
-"lng":-122.3071717}},
-{
-"title":"MET MARKET UPTOWN",
-"address":"100 Mercer St, Seattle, WA 98109",
-"coords":{
-"lat":47.6247495,
-"lng":-122.355052}},
-{
-"title":"QFC:QFC #881",
-"address":"500 MERCER STREET, Seattle, WA 98109",
-"coords":{
-"lat":47.6249353,
-"lng":-122.346896149898}},
-{
-"title":"FINCH & PINE",
-"address":"711 BELLEVUE AVE E, Seattle, WA 98102",
-"coords":{
-"lat":47.625731,
-"lng":-122.3268231}},
-{
-"title":"QFC:QFC #859",
-"address":"2636 BELLEVUE WAY NE, Bellevue, WA 98004",
-"coords":{
-"lat":47.6347691,
-"lng":-122.200734}},
-{
-"title":"KEN'S MARKET QUEEN ANNE",
-"address":"2400 6th Ave W, Seattle, WA 98119",
-"coords":{
-"lat":47.63980285,
-"lng":-122.364549959478}},
-{
-"title":"PCC:FREMONT #110",
-"address":"716 N 34TH ST, Seattle, WA 98103-8881",
-"coords":{
-"lat":47.6495721,
-"lng":-122.3489186}},
-{
-"title":"STONE WAY CAFE",
-"address":"3510 Stone Way N, Seattle, WA 98103",
-"coords":{
-"lat":47.6498762,
-"lng":-122.3424782}},
-{
-"title":"SBP FREMONT",
-"address":"3535 Interlake Ave N, Seattle, WA 98103",
-"coords":{
-"lat":47.6502553,
-"lng":-122.34174656429}},
-{
-"title":"SBP UPPER WALLS",
-"address":"3625 Interlake Ave N, Seattle, WA 98103",
-"coords":{
-"lat":47.6513384,
-"lng":-122.3417037}},
-{
-"title":"MET MARKET MAGNOLIA",
-"address":"3830 34th Ave W, Seattle, WA 98199",
-"coords":{
-"lat":47.6552831,
-"lng":-122.4005524}},
-{
-"title":"GREAT HARVEST BREAD CO.",
-"address":"4416 Fremont Ave N, Seattle, WA 98103",
-"coords":{
-"lat":47.6604793,
-"lng":-122.349641656484}},
-{
-"title":"MARKETIME FOODS",
-"address":"4416 Fremont Ave N, Seattle, WA 98103",
-"coords":{
-"lat":47.6604793,
-"lng":-122.349641656484}},
-{
-"title":"QFC:QFC #869",
-"address":"1801 NORTH 45TH STREET, Seattle, WA 98103",
-"coords":{
-"lat":47.6617288,
-"lng":-122.335989}},
-{
-"title":"PCC:BALLARD#190",
-"address":"1451 NW 46TH ST., Seattle, WA 98107",
-"coords":{
-"lat":47.6618685499999,
-"lng":-122.375582825317}},
-{
-"title":"QFC:QFC #807",
-"address":"2746 NE 45TH STREET, Seattle, WA 98105",
-"coords":{
-"lat":47.6622402,
-"lng":-122.2964413}},
-{
-"title":"MET MARKET KIRKLAND",
-"address":"10611 NE 68th St, Kirkland, WA 98033",
-"coords":{
-"lat":47.6658576,
-"lng":-122.1972297}},
-{
-"title":"PCC:KIRKLAND #20",
-"address":"10718 NE 68TH, Kirkland, WA 98033-7030",
-"coords":{
-"lat":47.6673526,
-"lng":-122.1973979}},
-{
-"title":"CAFFE UMBRIA:BALLARD",
-"address":"5407 Ballard Ave NW, Seattle, WA 98107",
-"coords":{
-"lat":47.6675718,
-"lng":-122.3850091}},
-{
-"title":"MET MARKET SAND POINT",
-"address":"5250 40th Ave NE, Seattle, WA 98105",
-"coords":{
-"lat":47.6681887,
-"lng":-122.283618222132}},
-{
-"title":"PCC:VIEW RIDGE #50",
-"address":"6514 40th Ave NE, Seattle, WA 98115",
-"coords":{
-"lat":47.6761289,
-"lng":-122.284355}},
-{
-"title":"PCC:REDMOND #120",
-"address":"11435 AVONDALE RD, Redmond, WA 98052",
-"coords":{
-"lat":47.6774665,
-"lng":-122.105863}},
-{
-"title":"QFC:QFC #894",
-"address":"425 URBAN PLAZA, Kirkland, WA 98033",
-"coords":{
-"lat":47.6784954,
-"lng":-122.1985533}},
-{
-"title":"PCC:VILLAGE #140",
-"address":"450 NE 71ST ST, Seattle, WA 98115",
-"coords":{
-"lat":47.6803721,
-"lng":-122.3235175}},
-{
-"title":"PCC:AURORA #90",
-"address":"7504 AURORA AVE N, Seattle, WA 98103-5358",
-"coords":{
-"lat":47.683542,
-"lng":-122.344097120798}},
-{
-"title":"LARSEN'S DANISH BAKERY",
-"address":"8000 24TH AVE NW, Seattle, WA 98117",
-"coords":{
-"lat":47.6869257,
-"lng":-122.3873766}},
-{
-"title":"QFC:QFC #878",
-"address":"23475 NE Novelty Hill Rd, Redmond, WA 98053",
-"coords":{
-"lat":47.6891611,
-"lng":-122.0888333}},
-{
-"title":"DIVA ESPRESSO - BROADVIEW",
-"address":"14419 Greenwood Ave N, Seattle, WA 98113",
-"coords":{
-"lat":47.6906007,
-"lng":-122.3552927}},
-{
-"title":"QFC:QFC #858",
-"address":"1531 NE 145TH STREET, Seattle, WA 98155",
-"coords":{
-"lat":47.7333469,
-"lng":-122.310498}},
-{
-"title":"QFC:QFC #850",
-"address":"22833 BOTHELL-EVERETT HWY, BOTHELL, WA 98201",
-"coords":{
-"lat":47.7905746,
-"lng":-122.216780132967}},
-{
-"title":"QFC:QFC #851",
-"address":"22828 100TH AVENUE WEST, EDMONDS, WA 98020",
-"coords":{
-"lat":47.7913908,
-"lng":-122.367839392754}},
-{
-"title":"PCC:EDMONDS #130",
-"address":"9803 EDMONDS WAY, EDMONDS, WA 98020-5901",
-"coords":{
-"lat":47.79146625,
-"lng":-122.366010725812}},
-{
-"title":"PCC:BOTHELL #160",
-"address":"22621 BOTHELL EVERETT HWY, BOTHELL, WA 98021",
-"coords":{
-"lat":47.7927416,
-"lng":-122.2143822}},
-{
-"title":"QFC:QFC #832",
-"address":"11700 MUKILTEO SPEEDWAY, MUKILTEO, WA 98275",
-"coords":{
-"lat":47.8924804993225,
-"lng":-122.28657802421}},
-{
-"title":"QFC:QFC #852",
-"address":"4919 EVERGREEN WAY, EVERETT, WA 98032",
-"coords":{
-"lat":47.9534237786957,
-"lng":-122.213237628522}},
-{
-"title":"QFC:QFC #853",
-"address":"2615 N BROADWAY AVENUE, EVERETT, WA 98201",
-"coords":{
-"lat":48.0031286,
-"lng":-122.2006842}},
-{
-"title":"CHIMACUM FARM STAND",
-"address":"9122 Rhody Dr., Chimacum, WA 98325",
-"coords":{
-"lat":48.0117364,
-"lng":-122.7693295}},
-{
-"title":"QFC:QFC #870",
-"address":"1890 IRONDALE ROAD, PORT HADLOCK, WA 98339",
-"coords":{
-"lat":48.0325089787919,
-"lng":-122.757732587706}},
-{
-"title":"QFC:QFC #879",
-"address":"27008 92nd Ave NW, Stanwood, WA 98292",
-"coords":{
-"lat":48.2414871940843,
-"lng":-122.357524732278}},
-{
-"title":"FOOD CO-OP DOWNTOWN",
-"address":"1220 N Forest St, Bellingham, WA 98225",
-"coords":{
-"lat":48.7473543499999,
-"lng":-122.47621811339}},
-{
-"title":"ROME GROCERY",
-"address":"2908 Mt Baker Hwy, Bellingham, WA 98226",
-"coords":{
-"lat":48.7901943,
-"lng":-122.421065}},
-{
-"title":"FOOD CO-OP CORDATA",
-"address":"315 Westerly Rd, Bellingham, WA 98226",
-"coords":{
-"lat":48.7915273,
-"lng":-122.492402015983}},
-
-
+        "locations": [{
+            "title": "HEALTHY SPIRITS CORTLAND",
+            "address": "249 CORTLAND AVE, SAN FRANCISCO, CA 94110",
+            "coords": {
+              "lat": 37.7394614,
+              "lng": -122.4186904
+            }
+          },
+          {
+            "title": "SEVEN ELEVEN 20473 (TARAVAL)",
+            "address": "2222 TARAVAL ST, SAN FRANCISCO, CA 94116",
+            "coords": {
+              "lat": 37.7427214,
+              "lng": -122.490059577298
+            }
+          },
+          {
+            "title": "SEA BEE LIQUORS",
+            "address": "3000 TARAVAL ST, SAN FRANCISCO, CA 94116",
+            "coords": {
+              "lat": 37.7431539,
+              "lng": -122.4734709
+            }
+          },
+          {
+            "title": "BROTHERS MINI MARKET",
+            "address": "3845 NORIEGA ST, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7528253,
+              "lng": -122.5052668
+            }
+          },
+          {
+            "title": "BREW VINO, SF",
+            "address": "2706 24TH STREET, SAN FRANCISCO, CA 94110",
+            "coords": {
+              "lat": 37.7530403387822,
+              "lng": -122.40659539748
+            }
+          },
+          {
+            "title": "19TH AVENUE LIQUOR",
+            "address": "1800 19TH AVE, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7541185,
+              "lng": -122.476091406935
+            }
+          },
+          {
+            "title": "WESTERN SUNSET MARKET",
+            "address": "4099 JUDAH ST, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7603023,
+              "lng": -122.5057581
+            }
+          },
+          {
+            "title": "CHARLIE'S MARKET",
+            "address": "3400 JUDAH ST, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7608786,
+              "lng": -122.4985935
+            }
+          },
+          {
+            "title": "JUDAH 9TH AVE LIQUORS 2019",
+            "address": "1400 9TH AVE, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7620559,
+              "lng": -122.466045
+            }
+          },
+          {
+            "title": "EDDYS MARKET/COD",
+            "address": "951 IRVING ST, SAN FRANCISCO, CA 94122",
+            "coords": {
+              "lat": 37.7638269,
+              "lng": -122.4683007
+            }
+          },
+          {
+            "title": "HEALTHY SPIRITS CASTRO",
+            "address": "2299 15TH ST, SAN FRANCISCO, CA 94114",
+            "coords": {
+              "lat": 37.7656552,
+              "lng": -122.4353024
+            }
+          },
+          {
+            "title": "FLYING PIG BISTRO",
+            "address": "433 S VAN NESS AVE, SAN FRANCISCO, CA 94103",
+            "coords": {
+              "lat": 37.766319,
+              "lng": -122.417422
+            }
+          },
+          {
+            "title": "HEALTHY SPIRITS VALENCIA",
+            "address": "300 VALENCIA ST, SAN FRANCISCO, CA 94103",
+            "coords": {
+              "lat": 37.7679143,
+              "lng": -122.422397611069
+            }
+          },
+          {
+            "title": "HAIGHT COLE LIQUORS",
+            "address": "1699 HAIGHT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7694214,
+              "lng": -122.4505453
+            }
+          },
+          {
+            "title": "SUNSHINE LIQUORS",
+            "address": "1754 HAIGHT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7695976,
+              "lng": -122.4511723
+            }
+          },
+          {
+            "title": "SANTA CLARA NATURAL ORGANIC MKT",
+            "address": "798 HAIGHT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7696673,
+              "lng": -122.4496634
+            }
+          },
+          {
+            "title": "SUPERETTE MARKET_2",
+            "address": "901 HAIGHT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7696673,
+              "lng": -122.4496634
+            }
+          },
+          {
+            "title": "CEDAR DELI AND MARKET",
+            "address": "1416 HAIGHT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7702885,
+              "lng": -122.4457035
+            }
+          },
+          {
+            "title": "TEDS MARKET",
+            "address": "1530 HOWARD ST, SAN FRANCISCO, CA 94103",
+            "coords": {
+              "lat": 37.7728761,
+              "lng": -122.416230474726
+            }
+          },
+          {
+            "title": "HAIGHT BOURBON SHOP",
+            "address": "378 FILLMORE STREET, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.772945,
+              "lng": -122.430492
+            }
+          },
+          {
+            "title": "KEY FOOD MARKET",
+            "address": "501 FILLMORE ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7741397,
+              "lng": -122.4309984
+            }
+          },
+          {
+            "title": "NEW STAR ELL LIQUOR",
+            "address": "501 DIVISADERO ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7741729,
+              "lng": -122.4378406
+            }
+          },
+          {
+            "title": "LUCINDA'S DELI & MORE/COD",
+            "address": "535 SCOTT ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.7747967,
+              "lng": -122.4361766
+            }
+          },
+          {
+            "title": "DENHARDS MARKET 2018",
+            "address": "701 10TH AVE, SAN FRANCISCO, CA 94118",
+            "coords": {
+              "lat": 37.7750476,
+              "lng": -122.468281
+            }
+          },
+          {
+            "title": "BALBOA PRODUCE/COD",
+            "address": "3635 BALBOA ST, SAN FRANCISCO, CA 94121",
+            "coords": {
+              "lat": 37.7755582,
+              "lng": -122.4978814
+            }
+          },
+          {
+            "title": "17TH AND BALBOA GROCERY/COD",
+            "address": "1601 BALBOA ST, SAN FRANCISCO, CA 94121",
+            "coords": {
+              "lat": 37.7765595,
+              "lng": -122.4760759
+            }
+          },
+          {
+            "title": "HARVEST URBAN MARKET/COD",
+            "address": "191 8TH ST, SAN FRANCISCO, CA 94103",
+            "coords": {
+              "lat": 37.776632,
+              "lng": -122.411975
+            }
+          },
+          {
+            "title": "GREEN EARTH NATURAL FOOD",
+            "address": "860 DIVISADERO ST, SAN FRANCISCO, CA 94117",
+            "coords": {
+              "lat": 37.777716,
+              "lng": -122.43816
+            }
+          },
+          {
+            "title": "MARTELLS LIQUOR & GROCERY",
+            "address": "5615 GEARY BLVD, SAN FRANCISCO, CA 94121",
+            "coords": {
+              "lat": 37.7801369,
+              "lng": -122.4797271
+            }
+          },
+          {
+            "title": "MAINLAND MARKET & PRODUCE",
+            "address": "5601 GEARY BLVD, SAN FRANCISCO, CA 94121",
+            "coords": {
+              "lat": 37.7801447,
+              "lng": -122.4795405
+            }
+          },
+          {
+            "title": "STATE MARKET -GEARY/CASH ONLY",
+            "address": "4751 GEARY BLVD, SAN FRANCISCO, CA 94118",
+            "coords": {
+              "lat": 37.7808983469387,
+              "lng": -122.470198397959
+            }
+          },
+          {
+            "title": "TIGERS LIQUORS",
+            "address": "2400 CLEMENT ST, SAN FRANCISCO, CA 94121",
+            "coords": {
+              "lat": 37.7821322,
+              "lng": -122.485026
+            }
+          },
+          {
+            "title": "SOMA WINES SPIRITS",
+            "address": "282 2ND ST, SAN FRANCISCO, CA 94105",
+            "coords": {
+              "lat": 37.7856476923076,
+              "lng": -122.396983384615
+            }
+          },
+          {
+            "title": "FRIENDS LIQUOR 2018/COD",
+            "address": "1758 FILLMORE ST, SAN FRANCISCO, CA 94115",
+            "coords": {
+              "lat": 37.7860068,
+              "lng": -122.4331305
+            }
+          },
+          {
+            "title": "ZAINS LIQUOR",
+            "address": "34 3RD ST, SAN FRANCISCO, CA 94103",
+            "coords": {
+              "lat": 37.78703005,
+              "lng": -122.403371849539
+            }
+          },
+          {
+            "title": "DISCOUNT GROCERS",
+            "address": "1203 POLK ST, SAN FRANCISCO, CA 94109",
+            "coords": {
+              "lat": 37.7876157027027,
+              "lng": -122.420192729729
+            }
+          },
+          {
+            "title": "NOB HILL GENERAL STORE",
+            "address": "1398 LEAVENWORTH ST, SAN FRANCISCO, CA 94109",
+            "coords": {
+              "lat": 37.7930204,
+              "lng": -122.4161325
+            }
+          },
+          {
+            "title": "RUTILYS MARKET",
+            "address": "1700 FILBERT ST, SAN FRANCISCO, CA 94123",
+            "coords": {
+              "lat": 37.7980395,
+              "lng": -122.4356023
+            }
+          },
+          {
+            "title": "THE NATURE STOP",
+            "address": "1336 GRANT AVE, SAN FRANCISCO, CA 94133",
+            "coords": {
+              "lat": 37.7993922,
+              "lng": -122.407129278012
+            }
+          },
+          {
+            "title": "MARINA SUPER",
+            "address": "2323 CHESTNUT ST, SAN FRANCISCO, CA 94123",
+            "coords": {
+              "lat": 37.8000223,
+              "lng": -122.4416127
+            }
+          },
+          {
+            "title": "RED DRAGON YOGA MV",
+            "address": "438 MILLER AVE, MILL VALLEY, CA 94941",
+            "coords": {
+              "lat": 37.8960158601282,
+              "lng": -122.535501422791
+            }
+          },
+          {
+            "title": "DONS LIQUORS",
+            "address": "18 BRIGHTON AVE, BOLINAS, CA 94924",
+            "coords": {
+              "lat": 37.9085868079862,
+              "lng": -122.687189085873
+            }
+          },
+          {
+            "title": "COAST CAFE",
+            "address": "46 WHARF RD, BOLINAS, CA 94924",
+            "coords": {
+              "lat": 37.9100923522924,
+              "lng": -122.684297270893
+            }
+          },
+          {
+            "title": "BOLINAS MARKET",
+            "address": "40 WHARF RD, BOLINAS, CA 94924",
+            "coords": {
+              "lat": 37.910161615166,
+              "lng": -122.684606407395
+            }
+          },
+          {
+            "title": "PETERS BEACON",
+            "address": "108 BELLAM BLVD, SAN RAFAEL, CA 94901",
+            "coords": {
+              "lat": 37.96064533261,
+              "lng": -122.504481052706
+            }
+          },
+          {
+            "title": "UNITED MARKET SR",
+            "address": "515 THIRD ST, SAN RAFAEL, CA 94901",
+            "coords": {
+              "lat": 37.970940407352,
+              "lng": -122.519251486337
+            }
+          },
+          {
+            "title": "RED DRAGON YOGA SR",
+            "address": "1701 4TH ST, SAN RAFAEL, CA 94901",
+            "coords": {
+              "lat": 37.974003,
+              "lng": -122.537579
+            }
+          },
+          {
+            "title": "UNITED MARKET S ANSELMO",
+            "address": "100 RED HILL AVE, SAN ANSELMO, CA 94960",
+            "coords": {
+              "lat": 37.9769358,
+              "lng": -122.5534189
+            }
+          },
+          {
+            "title": "QUICK N EASY",
+            "address": "807 SAN ANSELMO AVE, SAN ANSELMO, CA 94960",
+            "coords": {
+              "lat": 37.9769770588235,
+              "lng": -122.565014058823
+            }
+          },
+          {
+            "title": "G LIQUOR WINE AND GROCERY",
+            "address": "1910 SIR FRANCIS DRAKE BLVD, FAIRFAX, CA 94930",
+            "coords": {
+              "lat": 37.987432,
+              "lng": -122.588411
+            }
+          },
+          {
+            "title": "PERRY'S DELI #3",
+            "address": "1916 SIR FRANCIS DRAKE BLVD, FAIRFAX, CA 94930",
+            "coords": {
+              "lat": 37.9874551511797,
+              "lng": -122.589154877574
+            }
+          },
+          {
+            "title": "LIQUOR LAND",
+            "address": "274 NORTHGATE DR, SAN RAFAEL, CA 94903",
+            "coords": {
+              "lat": 38.001017355064,
+              "lng": -122.544171932935
+            }
+          },
+          {
+            "title": "HEARTBEAT CAFE_2",
+            "address": "99 MONTECILLO RD, SAN RAFAEL, CA 94903",
+            "coords": {
+              "lat": 38.00466675,
+              "lng": -122.555113356917
+            }
+          },
+          {
+            "title": "SEVENTY-SIX GAS TERRA LINDA",
+            "address": "921 DEL PRESIDIO BLVD, SAN RAFAEL, CA 94903",
+            "coords": {
+              "lat": 38.0067523027904,
+              "lng": -122.544596145376
+            }
+          },
+          {
+            "title": "SMITH RANCH DELI",
+            "address": "101 SMITH RANCH RD, SAN RAFAEL, CA 94903",
+            "coords": {
+              "lat": 38.0196676852502,
+              "lng": -122.534547139376
+            }
+          },
+          {
+            "title": "FARMHOUSE dba DUE WEST",
+            "address": "10005 HWY 1, OLEMA, CA 94950",
+            "coords": {
+              "lat": 38.0403158236422,
+              "lng": -122.787149476212
+            }
+          },
+          {
+            "title": "INVERNESS PARK MARKET",
+            "address": "12301 SIR FRANCIS DRAKE BLVD, INVERNESS, CA 94937",
+            "coords": {
+              "lat": 38.0636346139611,
+              "lng": -122.810777609248
+            }
+          },
+          {
+            "title": "FORKS FINGERS DELI",
+            "address": "372 BEL MARIN KEYS BLVD, NOVATO, CA 94949",
+            "coords": {
+              "lat": 38.0749394246066,
+              "lng": -122.537807425378
+            }
+          },
+          {
+            "title": "MATT & JEFFS CAR WASH/COD",
+            "address": "125 VINTAGE WAY, NOVATO, CA 94945",
+            "coords": {
+              "lat": 38.0864026457339,
+              "lng": -122.550275122499
+            }
+          },
+          {
+            "title": "SEVEN ELEVEN 14143 (NOVATO)",
+            "address": "800 DIABLO AVE, NOVATO, CA 94947",
+            "coords": {
+              "lat": 38.100405,
+              "lng": -122.57515
+            }
+          },
+          {
+            "title": "NOVATO U SAVE LIQUORS",
+            "address": "1535 S NOVATO BLVD, NOVATO, CA 94947",
+            "coords": {
+              "lat": 38.1034481014642,
+              "lng": -122.573552090006
+            }
+          },
+          {
+            "title": "JERRY'S DELICATESSAN",
+            "address": "7380 REDWOOD BLVD, NOVATO, CA 94965",
+            "coords": {
+              "lat": 38.108134,
+              "lng": -122.569899
+            }
+          },
+          {
+            "title": "TAGLIAFERRI DELICATESSEN",
+            "address": "1763-1765 GRANT AVE, NOVATO, CA 94945",
+            "coords": {
+              "lat": 38.1094819285714,
+              "lng": -122.582344785714
+            }
+          },
+          {
+            "title": "CHARLEYS DELI & LIQUORS",
+            "address": "601 PETALUMA BLVD S, PETALUMA, CA 94952",
+            "coords": {
+              "lat": 38.230582,
+              "lng": -122.631702
+            }
+          },
+          {
+            "title": "RIVER FRONT CAFE",
+            "address": "224 B ST, PETALUMA, CA 94952",
+            "coords": {
+              "lat": 38.2338251059076,
+              "lng": -122.639015225545
+            }
+          },
+          {
+            "title": "BROADWAY MARKET",
+            "address": "20511 BROADWAY, SONOMA, CA 95476",
+            "coords": {
+              "lat": 38.275423,
+              "lng": -122.460889
+            }
+          },
+          {
+            "title": "PICAZO CAFE & DELI",
+            "address": "19100 ARNOLD DR #A, SONOMA, CA 95476",
+            "coords": {
+              "lat": 38.297772,
+              "lng": -122.491426
+            }
+          },
+          {
+            "title": "THE SMALL WORLD MARKET",
+            "address": "932 COOMBS ST, NAPA, CA 94559",
+            "coords": {
+              "lat": 38.2983545918367,
+              "lng": -122.286619428571
+            }
+          },
+          {
+            "title": "DOMINICS GENOVA DELI",
+            "address": "1550 TRANCAS ST, NAPA, CA 94558",
+            "coords": {
+              "lat": 38.3223029411764,
+              "lng": -122.303346705882
+            }
+          },
+          {
+            "title": "COTATI CHEVRON GAS FOOD",
+            "address": "766 E COTATI AVE, COTATI, CA 94931",
+            "coords": {
+              "lat": 38.3305713367115,
+              "lng": -122.694535031726
+            }
+          },
+          {
+            "title": "PELICAN PLAZA GROCERY & DELI/COD/TEMP",
+            "address": "1400 HIGHWAY 1, BODEGA BAY, CA 94923",
+            "coords": {
+              "lat": 38.3338071765389,
+              "lng": -123.048252257211
+            }
+          },
+          {
+            "title": "DIEKMANNS BAY STORE",
+            "address": "1275 HWY 1, BODEGA BAY, CA 94923",
+            "coords": {
+              "lat": 38.33406,
+              "lng": -123.048621
+            }
+          },
+          {
+            "title": "A L MARKET",
+            "address": "1435 E COTATI AVE, ROHNERT PARK, CA 94928",
+            "coords": {
+              "lat": 38.3344631965754,
+              "lng": -122.687431178067
+            }
+          },
+          {
+            "title": "U-SAVE LIQUOR COTATI",
+            "address": "7500 COMMERCE BLVD, COTATI, CA 94931",
+            "coords": {
+              "lat": 38.334526,
+              "lng": -122.712345
+            }
+          },
+          {
+            "title": "RANCH MARKET",
+            "address": "4215 SOLANO AVE, NAPA, CA 94558",
+            "coords": {
+              "lat": 38.3361707292404,
+              "lng": -122.322530240161
+            }
+          },
+          {
+            "title": "SONOMA SOURDOUGH (RP)",
+            "address": "5440 STATE FARM DR, ROHNERT PARK, CA 94928",
+            "coords": {
+              "lat": 38.3567918783477,
+              "lng": -122.709488524881
+            }
+          },
+          {
+            "title": "COUNTRY WINE & LIQUOR",
+            "address": "865 GRAVENSTEIN HWY, SEBASTOPOL, CA 95472",
+            "coords": {
+              "lat": 38.3911886,
+              "lng": -122.8168206
+            }
+          },
+          {
+            "title": "RANCH MARKET TOO",
+            "address": "6498 WASHINGTON ST, YOUNTVILLE, CA 94599",
+            "coords": {
+              "lat": 38.401066,
+              "lng": -122.35999
+            }
+          },
+          {
+            "title": "SEBASTOPOL LIQUOR DELI",
+            "address": "6800 SEBASTOPOL AVE, SEBASTOPOL, CA 95472",
+            "coords": {
+              "lat": 38.4025876271613,
+              "lng": -122.821284137199
+            }
+          },
+          {
+            "title": "PACIFIC MARKET #1",
+            "address": "550 GRAVENSTEIN HWY N, SEBASTOPOL, CA 95472",
+            "coords": {
+              "lat": 38.4056261,
+              "lng": -122.8380252
+            }
+          },
+          {
+            "title": "KENWOOD MARKET",
+            "address": "8910 SONOMA HWY #A, KENWOOD, CA 95452",
+            "coords": {
+              "lat": 38.4190235,
+              "lng": -122.5518182
+            }
+          },
+          {
+            "title": "ANDYS PRODUCE FRUIT BASKET",
+            "address": "1691 GRAVENSTEIN HWY N, SEBASTOPOL, CA 95472",
+            "coords": {
+              "lat": 38.4210934,
+              "lng": -122.845519442954
+            }
+          },
+          {
+            "title": "SEBASTOPOL UNION 76 / 7-11 #39331",
+            "address": "370 SEBASTOPOL RD, SANTA ROSA, CA 95401",
+            "coords": {
+              "lat": 38.4251339,
+              "lng": -122.7634808
+            }
+          },
+          {
+            "title": "MD LIQUOR AND FOOD #4",
+            "address": "2743 YULUPA AVE, SANTA ROSA, CA 95405",
+            "coords": {
+              "lat": 38.4267125,
+              "lng": -122.6685544
+            }
+          },
+          {
+            "title": "SUPER LATINO MARKET BAKERY",
+            "address": "1701 SEBASTOPOL RD, SANTA ROSA, CA 95407",
+            "coords": {
+              "lat": 38.427704,
+              "lng": -122.7385044
+            }
+          },
+          {
+            "title": "LAZZINIS BENNETT VALLEY MARKET/CLOSED",
+            "address": "3449 BENNETT VALLEY RD, SANTA ROSA, CA 95404",
+            "coords": {
+              "lat": 38.43147,
+              "lng": -122.679861
+            }
+          },
+          {
+            "title": "CS GROCERY",
+            "address": "419 STONY POINT ROAD, SANTA ROSA, CA 95401",
+            "coords": {
+              "lat": 38.4320551,
+              "lng": -122.742564
+            }
+          },
+          {
+            "title": "MD LIQUOR FOOD #7",
+            "address": "9050 GRATON RD, GRATON, CA 95444",
+            "coords": {
+              "lat": 38.43654505,
+              "lng": -122.869399399999
+            }
+          },
+          {
+            "title": "CRYSTALS CORNER",
+            "address": "1185 YULUPA AVE, SANTA ROSA, CA 95405",
+            "coords": {
+              "lat": 38.4422002,
+              "lng": -122.6747213
+            }
+          },
+          {
+            "title": "BENTON MARKET",
+            "address": "801 BENTON ST, SANTA ROSA, CA 95404",
+            "coords": {
+              "lat": 38.44790245,
+              "lng": -122.713198348296
+            }
+          },
+          {
+            "title": "SAMS MARKET #12",
+            "address": "3088 MARLOW RD, SANTA ROSA, CA 95403",
+            "coords": {
+              "lat": 38.4668771,
+              "lng": -122.7501873
+            }
+          },
+          {
+            "title": "INCHOS CAFE",
+            "address": "401 BICENTENNIAL WAY, SANTA ROSA, CA 95403",
+            "coords": {
+              "lat": 38.4718156499999,
+              "lng": -122.727193150821
+            }
+          },
+          {
+            "title": "LARKFIELD LIQUOR AND DELI/COD",
+            "address": "4777 OLD REDWOOD HWY, SANTA ROSA, CA 95403",
+            "coords": {
+              "lat": 38.4845976,
+              "lng": -122.7349454
+            }
+          },
+          {
+            "title": "LARKFIELD UNION 76",
+            "address": "4605 OLD REDWOOD HWY, SANTA ROSA, CA 95403",
+            "coords": {
+              "lat": 38.4845976,
+              "lng": -122.7349454
+            }
+          },
+          {
+            "title": "SPEERS MARKET",
+            "address": "7891 MIRABEL RD, FORESTVILLE, CA 95436",
+            "coords": {
+              "lat": 38.489766949324,
+              "lng": -122.894934929684
+            }
+          },
+          {
+            "title": "FULTON MARKET",
+            "address": "1150 RIVER RD, FULTON, CA 95439",
+            "coords": {
+              "lat": 38.4964691423486,
+              "lng": -122.770578532228
+            }
+          },
+          {
+            "title": "BAD ASS COFFEE 2019",
+            "address": "90 MARK WEST SPRINGS RD, SANTA ROSA, CA 95403",
+            "coords": {
+              "lat": 38.496606,
+              "lng": -122.7486617
+            }
+          },
+          {
+            "title": "GUERNEVILLE LIQUORS",
+            "address": "16297 MAIN ST, GUERNEVILLE, CA 95446",
+            "coords": {
+              "lat": 38.5017965,
+              "lng": -122.998549038379
+            }
+          },
+          {
+            "title": "LAMBERTS 76 LLC",
+            "address": "16383 MAIN ST, GUERNEVILLE, CA 95446",
+            "coords": {
+              "lat": 38.5019573,
+              "lng": -123.0017974
+            }
+          },
+          {
+            "title": "MD LIQUOR FOOD #8",
+            "address": "16316 MAIN ST, GUERNEVILLE, CA 95446",
+            "coords": {
+              "lat": 38.5019573,
+              "lng": -123.0017974
+            }
+          },
+          {
+            "title": "QUICK SHOP DELI/COD",
+            "address": "8197 OLD REDWOOD HWY, WINDSOR, CA 95492",
+            "coords": {
+              "lat": 38.540912,
+              "lng": -122.795741
+            }
+          },
+          {
+            "title": "FAST & EASY MART WINDSOR",
+            "address": "8916 BROOKS RD S, WINDSOR, CA 95492",
+            "coords": {
+              "lat": 38.5559667915993,
+              "lng": -122.807295752742
+            }
+          },
+          {
+            "title": "CALMART CALISTOGA",
+            "address": "1491 LINCOLN AVE, CALISTOGA, CA 94515",
+            "coords": {
+              "lat": 38.5798733809523,
+              "lng": -122.578523761904
+            }
+          },
+          {
+            "title": "CITRUS SPIRTS AND MARKET",
+            "address": "421 S. CLOVERDALE BLVD, CLOVERDALE, CA 95425",
+            "coords": {
+              "lat": 38.7979304998985,
+              "lng": -123.018648625973
+            }
+          },
+          {
+            "title": "FOODS ETC",
+            "address": "15290 LAKESHORE DR, CLEARLAKE, CA 95422",
+            "coords": {
+              "lat": 38.95034805,
+              "lng": -122.627058335437
+            }
+          },
+          {
+            "title": "BOONT BERRY FARM",
+            "address": "13981 HWY 128, BOONVILLE, CA 95415",
+            "coords": {
+              "lat": 39.043242,
+              "lng": -123.405288
+            }
+          },
+          {
+            "title": "PROVISION MART",
+            "address": "6130 N STATE ST, CALPELLA, CA 95418",
+            "coords": {
+              "lat": 39.2320035557446,
+              "lng": -123.203197942522
+            }
+          },
+          {
+            "title": "REDWOOD VALLEY MARKET",
+            "address": "999 E SCHOOL WAY, REDWOOD VALLEY, CA 95470",
+            "coords": {
+              "lat": 39.265127,
+              "lng": -123.204225
+            }
+          },
+          {
+            "title": "KARKAR'S DELI",
+            "address": "25287 SHERWOOD RD, WILLITS, CA 95490",
+            "coords": {
+              "lat": 39.4436451318478,
+              "lng": -123.382673499681
+            }
+          },
+          {
+            "title": "SPEEDEX GASOLINE",
+            "address": "863 N MAIN ST, FORT BRAGG, CA 95437",
+            "coords": {
+              "lat": 39.4512936734693,
+              "lng": -123.805965
+            }
+          },
+          {
+            "title": "GEIGERS LONG VALLEY MARKET 2019",
+            "address": "44951 HIGHWAY 101, LAYTONVILLE, CA 95454",
+            "coords": {
+              "lat": 39.6869423262782,
+              "lng": -123.482106313607
+            }
+          },
+          {
+            "title": "BERRYVALE",
+            "address": "305 S Mt Shasta Blvd, Mt Shasta,  CA 96067",
+            "coords": {
+              "lat": 41.3110550612244,
+              "lng": -122.311115040816
+            }
+          },
+          {
+            "title": "DIGGIN' LIVIN' FARM AND APIARIES",
+            "address": "143 Redwood Hwy, Cave Junction, OR 97523",
+            "coords": {
+              "lat": 42.1594702,
+              "lng": -123.6478983
+            }
+          },
+          {
+            "title": "SHOP N KART",
+            "address": "2268 Ashland St, Ashland, Ashland, OR 97520",
+            "coords": {
+              "lat": 42.1852794827586,
+              "lng": -122.672398034482
+            }
+          },
+          {
+            "title": "VIDA BAKING",
+            "address": "149 N Pioneer St, Ashland, OR 97520",
+            "coords": {
+              "lat": 42.1978505714285,
+              "lng": -122.713362693877
+            }
+          },
+          {
+            "title": "ASHLAND CO-OP",
+            "address": "237 N 1st St, Ashland, OR 97520",
+            "coords": {
+              "lat": 42.1988509,
+              "lng": -122.71162078576
+            }
+          },
+          {
+            "title": "TAKUBEH FARM & GARDEN",
+            "address": "20690 Williams Hwy, Williams, OR 97544",
+            "coords": {
+              "lat": 42.219709140596,
+              "lng": -123.273294528587
+            }
+          },
+          {
+            "title": "WILLIAMS GENERAL STORE",
+            "address": "20180 Williams Hwy, Williams, OR 97544",
+            "coords": {
+              "lat": 42.224759,
+              "lng": -123.26961
+            }
+          },
+          {
+            "title": "APPLEGATE STORE",
+            "address": "15095 OR-238, Applegate, OR 97530",
+            "coords": {
+              "lat": 42.2559965614763,
+              "lng": -123.168261866924
+            }
+          },
+          {
+            "title": "RUCH COUNTRY STORE",
+            "address": "7350 OR-238, Jacksonville, OR 97530",
+            "coords": {
+              "lat": 42.3137554,
+              "lng": -122.9658661
+            }
+          },
+          {
+            "title": "MEDFORD COOP (CUSTOMER)",
+            "address": "945 S Riverside Ave, Medford, OR 97501",
+            "coords": {
+              "lat": 42.3178936,
+              "lng": -122.8632690275
+            }
+          },
+          {
+            "title": "FOOD 4 LESS (AKA SHERM'S)",
+            "address": "2230 Biddle Rd., Medford, OR 97504",
+            "coords": {
+              "lat": 42.3508166130653,
+              "lng": -122.875003907035
+            }
+          },
+          {
+            "title": "HIDDEN VALLEY MARKET",
+            "address": "7200 Williams Hwy, Grants Pass, OR 97527",
+            "coords": {
+              "lat": 42.4128181,
+              "lng": -123.343392
+            }
+          },
+          {
+            "title": "WHISTLING DUCK FARM STORE",
+            "address": "12800 Williams Hwy, Grants Pass, OR 97527",
+            "coords": {
+              "lat": 42.4128181,
+              "lng": -123.343392
+            }
+          },
+          {
+            "title": "GOOSEBERRIES",
+            "address": "1201 Redwood Ave, Grants Pass, OR 97526",
+            "coords": {
+              "lat": 42.4217379,
+              "lng": -123.3511287
+            }
+          },
+          {
+            "title": "CARTWRIGHTS VALLEY MEAT CO.",
+            "address": "825 Union Ave, Grants Pass, OR 97527",
+            "coords": {
+              "lat": 42.4218070612244,
+              "lng": -123.346892489795
+            }
+          },
+          {
+            "title": "CASABLANCA COFFEE & GRILL",
+            "address": "686 Union Ave, Grants Pass, OR 97527",
+            "coords": {
+              "lat": 42.422475947138,
+              "lng": -123.343067010941
+            }
+          },
+          {
+            "title": "GRANTS PASS FARMERS MARKET",
+            "address": "295 NW F Street, Grants Pass, OR 97526",
+            "coords": {
+              "lat": 42.4407120537822,
+              "lng": -123.328869553656
+            }
+          },
+          {
+            "title": "COAST FORK FARM STAND",
+            "address": "90 S 10th St, Cottage Grove, OR 97424",
+            "coords": {
+              "lat": 43.7968840408163,
+              "lng": -123.058055
+            }
+          },
+          {
+            "title": "FRIENDLY STREET MARKET",
+            "address": "2757 Friendly St, Eugene, OR 97405",
+            "coords": {
+              "lat": 44.0284077,
+              "lng": -123.105194474387
+            }
+          },
+          {
+            "title": "CAPELLAS MARKET",
+            "address": "2489 Willamette St, Eugene, OR 97405",
+            "coords": {
+              "lat": 44.0316016226871,
+              "lng": -123.090591455221
+            }
+          },
+          {
+            "title": "SUNDANCE NATURAL FOODS",
+            "address": "748 E 24th Ave, Eugene, OR 97405",
+            "coords": {
+              "lat": 44.0331596,
+              "lng": -123.0813553
+            }
+          },
+          {
+            "title": "KIVA",
+            "address": "125 W 11th Ave, Eugene, OR 97401",
+            "coords": {
+              "lat": 44.04779,
+              "lng": -123.094856
+            }
+          },
+          {
+            "title": "RED BARN",
+            "address": "357 Van Buren St, Eugene, OR 97402",
+            "coords": {
+              "lat": 44.0559337,
+              "lng": -123.1092447
+            }
+          },
+          {
+            "title": "OCEANA NATURAL FOOD COOPERATIVE",
+            "address": "159 SE 2nd St, Newport, OR 97365",
+            "coords": {
+              "lat": 44.6350140785766,
+              "lng": -124.051582367317
+            }
+          },
+          {
+            "title": "LIFESOURCE NATURAL FOODS (AKA BEAMER'S)",
+            "address": "2649 Commercial St SE, Salem, OR 97302",
+            "coords": {
+              "lat": 44.915351,
+              "lng": -123.045181
+            }
+          },
+          {
+            "title": "QFC:QFC #202",
+            "address": "7525 SW BARNES RD, PORTLAND, OR 97225",
+            "coords": {
+              "lat": 45.5155251,
+              "lng": -122.7549112
+            }
+          },
+          {
+            "title": "QFC:QFC #205",
+            "address": "5544 EAST BURNSIDE ST, PORTLAND, OR 97215",
+            "coords": {
+              "lat": 45.5227974489795,
+              "lng": -122.606989714285
+            }
+          },
+          {
+            "title": "QFC:QFC #212",
+            "address": "3505 SE 192ND AVE, VANCOUVER, WA 98683",
+            "coords": {
+              "lat": 45.59471625,
+              "lng": -122.476299852063
+            }
+          },
+          {
+            "title": "GOOD HEALTH NUTRITION CENTER",
+            "address": "503 Harrison Ave, Centralia, WA 98531",
+            "coords": {
+              "lat": 46.7222192208057,
+              "lng": -122.969093168791
+            }
+          },
+          {
+            "title": "SCHWARTZ'S",
+            "address": "124 4th Ave E, Olympia, WA 98501",
+            "coords": {
+              "lat": 47.0450082874254,
+              "lng": -122.901287221825
+            }
+          },
+          {
+            "title": "PARKSIDE CAFE",
+            "address": "1909 Harrison Ave NW, Olympia, WA 98502",
+            "coords": {
+              "lat": 47.0459589795918,
+              "lng": -122.925014408163
+            }
+          },
+          {
+            "title": "RALPH'S THRIFTWAY",
+            "address": "1908 4th Ave E, Olympia, WA 98506",
+            "coords": {
+              "lat": 47.0461325555555,
+              "lng": -122.875148555555
+            }
+          },
+          {
+            "title": "BLUE HERON BAKERY",
+            "address": "4419 Harrison Ave NW, Olympia, WA 98502",
+            "coords": {
+              "lat": 47.0462778,
+              "lng": -122.9581249
+            }
+          },
+          {
+            "title": "BATDORF & BRONSON COFFEE ROASTERS:DANCING GOATS COFFEE BAR TACOMA",
+            "address": "200 Market St NE, Olympia, WA 98501",
+            "coords": {
+              "lat": 47.0508088,
+              "lng": -122.9008097
+            }
+          },
+          {
+            "title": "PROVIDENCE HOSP-ST PETER",
+            "address": "413 Lilly Rd NE, Olympia, WA 98506",
+            "coords": {
+              "lat": 47.0524331,
+              "lng": -122.847426160933
+            }
+          },
+          {
+            "title": "OLYMPIA FOOD COOP WEST",
+            "address": "921 Rogers St NW, Olympia, WA 98502",
+            "coords": {
+              "lat": 47.0533411,
+              "lng": -122.9190031
+            }
+          },
+          {
+            "title": "SAN FRANCISCO BAKERY - OLYMPIA",
+            "address": "1320 San Francisco Ave NE, Olympia, WA 98506",
+            "coords": {
+              "lat": 47.0573638,
+              "lng": -122.885196
+            }
+          },
+          {
+            "title": "NOMAD PNW",
+            "address": "529 Church St, Wilkeson, WA 98396",
+            "coords": {
+              "lat": 47.1048370974227,
+              "lng": -122.045778832146
+            }
+          },
+          {
+            "title": "H & L PRODUCE",
+            "address": "7320 Lakewood Dr W, Lakewood, WA 98499",
+            "coords": {
+              "lat": 47.1916413458296,
+              "lng": -122.508889819274
+            }
+          },
+          {
+            "title": "VALLEY FARMS",
+            "address": "5728 River Rd E, Puyallup, WA 98371",
+            "coords": {
+              "lat": 47.2095681,
+              "lng": -122.3322677
+            }
+          },
+          {
+            "title": "STADIUM THRIFTWAY",
+            "address": "618 N 1st St, Tacoma, WA 98403",
+            "coords": {
+              "lat": 47.2643278979591,
+              "lng": -122.448512265306
+            }
+          },
+          {
+            "title": "MET MARKET PROCTOR",
+            "address": "2420 N Proctor St, Tacoma, WA 98406",
+            "coords": {
+              "lat": 47.2694876,
+              "lng": -122.489729373628
+            }
+          },
+          {
+            "title": "TACOMA CO-OP",
+            "address": "4502 N Pearl St, Tacoma, WA 98407",
+            "coords": {
+              "lat": 47.2900403673469,
+              "lng": -122.515878918367
+            }
+          },
+          {
+            "title": "TACOMA FOOD CO-OP",
+            "address": "4502 N Pearl St, Tacoma, WA 98407",
+            "coords": {
+              "lat": 47.2900403673469,
+              "lng": -122.515878918367
+            }
+          },
+          {
+            "title": "QFC:QFC #831",
+            "address": "4101 49TH AVE NE, Tacoma, WA 98422",
+            "coords": {
+              "lat": 47.293847,
+              "lng": -122.38204
+            }
+          },
+          {
+            "title": "MET MARKET GIG HARBOR",
+            "address": "5010 Point Fosdick Dr, Gig Harbor, WA 98335",
+            "coords": {
+              "lat": 47.3029807777777,
+              "lng": -122.579327888888
+            }
+          },
+          {
+            "title": "QFC:QFC #837",
+            "address": "22131 SE 237TH STREET, Maple Valley, WA 98038",
+            "coords": {
+              "lat": 47.3880453,
+              "lng": -122.045011079252
+            }
+          },
+          {
+            "title": "QFC:QFC #805",
+            "address": "17847 1st Ave S, Burien, WA 98148",
+            "coords": {
+              "lat": 47.4327507,
+              "lng": -122.3356094
+            }
+          },
+          {
+            "title": "REFUEL CAFE",
+            "address": "401 OLYMPIA AVE NE, RENTON, WA 98056",
+            "coords": {
+              "lat": 47.4891439,
+              "lng": -122.172379587905
+            }
+          },
+          {
+            "title": "QFC:QFC #829",
+            "address": "460 EAST NORTH BEND WAY, NORTH BEND, WA 98045",
+            "coords": {
+              "lat": 47.4932874,
+              "lng": -121.780526954652
+            }
+          },
+          {
+            "title": "WILDWOOD MARKET",
+            "address": "9214 45TH AVE SW, Seattle, WA 98146",
+            "coords": {
+              "lat": 47.5209493,
+              "lng": -122.3900124
+            }
+          },
+          {
+            "title": "HIGHLAND PARK CORNER STORE",
+            "address": "7789 HIGHLAND PARK WAY SW, Seattle, WA 98106",
+            "coords": {
+              "lat": 47.5321137,
+              "lng": -122.347104000419
+            }
+          },
+          {
+            "title": "QFC:QFC #827",
+            "address": "6940 Coal Creek Pkwy SE, Newcastle, WA 98059",
+            "coords": {
+              "lat": 47.539144,
+              "lng": -122.1658
+            }
+          },
+          {
+            "title": "QFC:QFC #806",
+            "address": "8421 SE 68TH STREET, Mercer Island, WA 98040",
+            "coords": {
+              "lat": 47.5419621544899,
+              "lng": -122.226743791458
+            }
+          },
+          {
+            "title": "WEST SEATTLE THRIFTWAY",
+            "address": "4201 SW Morgan St, Seattle, WA 98136",
+            "coords": {
+              "lat": 47.5447063,
+              "lng": -122.387010594463
+            }
+          },
+          {
+            "title": "QFC:QFC #821",
+            "address": "1540 NW GILMAN BLVD, Issaquah, WA 98027",
+            "coords": {
+              "lat": 47.54655725,
+              "lng": -122.060388031134
+            }
+          },
+          {
+            "title": "PCC:ISSAQUAH #100",
+            "address": "1810 12TH AVE NW, Issaquah, WA 98027",
+            "coords": {
+              "lat": 47.5516685,
+              "lng": -122.056528
+            }
+          },
+          {
+            "title": "OLYMPIA COFFEE COLUMBIA CITY",
+            "address": "4824 RAINIER AVE S, Seattle, WA 98118",
+            "coords": {
+              "lat": 47.5587714,
+              "lng": -122.285298
+            }
+          },
+          {
+            "title": "PCC:COLUMBIA CITY #150",
+            "address": "3610 S. EDMUNDS ST., Seattle, WA 98118",
+            "coords": {
+              "lat": 47.5589369,
+              "lng": -122.2868536
+            }
+          },
+          {
+            "title": "QFC:QFC #883",
+            "address": "4550 42ND AVENUE SW, Seattle, WA 98116",
+            "coords": {
+              "lat": 47.5613693,
+              "lng": -122.3852393
+            }
+          },
+          {
+            "title": "QFC:QFC #840",
+            "address": "4570 Klahanie Dr SE, Issaquah, WA 98029",
+            "coords": {
+              "lat": 47.5655558,
+              "lng": -122.0034138
+            }
+          },
+          {
+            "title": "SEQUENTIAL RETAIL STATION #1",
+            "address": "4034 W Marginal Way SW, Seattle, WA 98106",
+            "coords": {
+              "lat": 47.5676316499999,
+              "lng": -122.353033135922
+            }
+          },
+          {
+            "title": "QFC:QFC #822",
+            "address": "3520 FACTORIA BLVD, Bellevue, WA 98006",
+            "coords": {
+              "lat": 47.5745986,
+              "lng": -122.1695084
+            }
+          },
+          {
+            "title": "PCC:WEST SEATTLE #60",
+            "address": "2749 CALIFORNIA SW, Seattle, WA 98116-2405",
+            "coords": {
+              "lat": 47.57746005,
+              "lng": -122.387083060786
+            }
+          },
+          {
+            "title": "QFC:QFC #849",
+            "address": "2707 RAINIER AVE SOUTH, Seattle, WA 98144",
+            "coords": {
+              "lat": 47.5787483,
+              "lng": -122.2998367
+            }
+          },
+          {
+            "title": "MET MARKET ADMIRAL",
+            "address": "2320 42nd Ave SW, Seattle, WA 98116",
+            "coords": {
+              "lat": 47.58214135,
+              "lng": -122.384778829647
+            }
+          },
+          {
+            "title": "QFC:QFC #824",
+            "address": "2902 228TH AVE SE, Sammamish, WA 98027",
+            "coords": {
+              "lat": 47.5840169395494,
+              "lng": -122.035427326513
+            }
+          },
+          {
+            "title": "MET MARKET MERCER ISLAND",
+            "address": "2755 77th Ave SE, Mercer Island, WA 98040",
+            "coords": {
+              "lat": 47.5860286921947,
+              "lng": -122.235156830318
+            }
+          },
+          {
+            "title": "SEATTLE BOULDERING PROJECT",
+            "address": "900 Poplar Pl S, Seattle, WA 98144",
+            "coords": {
+              "lat": 47.5936174,
+              "lng": -122.3109124
+            }
+          },
+          {
+            "title": "QFC:QFC #874",
+            "address": "1510 145TH PL SE, Bellevue, WA 98007",
+            "coords": {
+              "lat": 47.5968855,
+              "lng": -122.148495782711
+            }
+          },
+          {
+            "title": "CONE & STEINER - PIONEER SQ.",
+            "address": "135 S King St, Seattle, WA 98104",
+            "coords": {
+              "lat": 47.5981384,
+              "lng": -122.3325143
+            }
+          },
+          {
+            "title": "CAFFE UMBRIA:OCCIDENTAL",
+            "address": "320 Occidental Ave S, Seattle, WA 98104",
+            "coords": {
+              "lat": 47.5993857,
+              "lng": -122.332689
+            }
+          },
+          {
+            "title": "STOCKBOX",
+            "address": "901 JAMES ST, Seattle, WA 98104",
+            "coords": {
+              "lat": 47.6055194,
+              "lng": -122.3244163
+            }
+          },
+          {
+            "title": "MET MARKET SAMMAMISH",
+            "address": "301 228th Ave SE, Sammamish, WA 98074",
+            "coords": {
+              "lat": 47.606008,
+              "lng": -122.0360175
+            }
+          },
+          {
+            "title": "HILLTOP DELI",
+            "address": "800 Seneca St, Seattle, WA 98101",
+            "coords": {
+              "lat": 47.6095652,
+              "lng": -122.3297117
+            }
+          },
+          {
+            "title": "SEATTLE U. SIDEBAR",
+            "address": "901 12th Ave, Seattle, WA 98122",
+            "coords": {
+              "lat": 47.61065225,
+              "lng": -122.317137029669
+            }
+          },
+          {
+            "title": "SEATTLE UNIVERSITY",
+            "address": "901 12th Ave, Seattle, WA 98122",
+            "coords": {
+              "lat": 47.61065225,
+              "lng": -122.317137029669
+            }
+          },
+          {
+            "title": "SEA U. CONVERGENT ZONE",
+            "address": "901 12th Ave, Seattle, WA 98122",
+            "coords": {
+              "lat": 47.61065225,
+              "lng": -122.317137029669
+            }
+          },
+          {
+            "title": "PCC:CENTRAL DISTRICT #24",
+            "address": "2230 E Union St, Seattle, WA 98122",
+            "coords": {
+              "lat": 47.6131191,
+              "lng": -122.3029763
+            }
+          },
+          {
+            "title": "PCC:BELLEVUE",
+            "address": "11615 NE 4TH STREET, Bellevue, WA 98004",
+            "coords": {
+              "lat": 47.6137465,
+              "lng": -122.2004299
+            }
+          },
+          {
+            "title": "NEW TOWN MARKET",
+            "address": "2801 Western Ave # B, Seattle, WA 98121",
+            "coords": {
+              "lat": 47.6156889,
+              "lng": -122.3527294
+            }
+          },
+          {
+            "title": "QFC:QFC #808",
+            "address": "10116 NE 8TH STREET, Bellevue, WA 98004",
+            "coords": {
+              "lat": 47.61863475,
+              "lng": -122.205366705682
+            }
+          },
+          {
+            "title": "QFC:QFC #826",
+            "address": "15600 NE 8TH STREET, Bellevue, WA 98008",
+            "coords": {
+              "lat": 47.61995065,
+              "lng": -122.12867941496
+            }
+          },
+          {
+            "title": "OVERLAKE HOSPITAL",
+            "address": "1035 116th Ave NE, Bellevue, WA 98004",
+            "coords": {
+              "lat": 47.6211869,
+              "lng": -122.186956204506
+            }
+          },
+          {
+            "title": "STELLA DELI AND MARKET",
+            "address": "300 2nd Ave W, Seattle, WA 98119",
+            "coords": {
+              "lat": 47.6213118,
+              "lng": -122.3591287
+            }
+          },
+          {
+            "title": "OVERLAKE HOSP-ATRIUM CAFE",
+            "address": "1135 116th Ave NE, Bellevue, WA 98004",
+            "coords": {
+              "lat": 47.6221991428571,
+              "lng": -122.185553142857
+            }
+          },
+          {
+            "title": "LOVE AND FLOUR",
+            "address": "2719 E Madison St, Seattle, WA 98112",
+            "coords": {
+              "lat": 47.6228645,
+              "lng": -122.2964914
+            }
+          },
+          {
+            "title": "LOCAL COFFEE SPOT - FAIRVIEW",
+            "address": "500 Fairview Ave N, Seattle, WA 98109",
+            "coords": {
+              "lat": 47.6232737,
+              "lng": -122.3340524
+            }
+          },
+          {
+            "title": "CONE & STEINER - CAPITAL HILL",
+            "address": "532 19th Ave E, Seattle, WA 98112",
+            "coords": {
+              "lat": 47.6240701,
+              "lng": -122.3071717
+            }
+          },
+          {
+            "title": "MET MARKET UPTOWN",
+            "address": "100 Mercer St, Seattle, WA 98109",
+            "coords": {
+              "lat": 47.6247495,
+              "lng": -122.355052
+            }
+          },
+          {
+            "title": "QFC:QFC #881",
+            "address": "500 MERCER STREET, Seattle, WA 98109",
+            "coords": {
+              "lat": 47.6249353,
+              "lng": -122.346896149898
+            }
+          },
+          {
+            "title": "FINCH & PINE",
+            "address": "711 BELLEVUE AVE E, Seattle, WA 98102",
+            "coords": {
+              "lat": 47.625731,
+              "lng": -122.3268231
+            }
+          },
+          {
+            "title": "QFC:QFC #859",
+            "address": "2636 BELLEVUE WAY NE, Bellevue, WA 98004",
+            "coords": {
+              "lat": 47.6347691,
+              "lng": -122.200734
+            }
+          },
+          {
+            "title": "KEN'S MARKET QUEEN ANNE",
+            "address": "2400 6th Ave W, Seattle, WA 98119",
+            "coords": {
+              "lat": 47.63980285,
+              "lng": -122.364549959478
+            }
+          },
+          {
+            "title": "PCC:FREMONT #110",
+            "address": "716 N 34TH ST, Seattle, WA 98103-8881",
+            "coords": {
+              "lat": 47.6495721,
+              "lng": -122.3489186
+            }
+          },
+          {
+            "title": "STONE WAY CAFE",
+            "address": "3510 Stone Way N, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6498762,
+              "lng": -122.3424782
+            }
+          },
+          {
+            "title": "SBP FREMONT",
+            "address": "3535 Interlake Ave N, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6502553,
+              "lng": -122.34174656429
+            }
+          },
+          {
+            "title": "SBP UPPER WALLS",
+            "address": "3625 Interlake Ave N, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6513384,
+              "lng": -122.3417037
+            }
+          },
+          {
+            "title": "MET MARKET MAGNOLIA",
+            "address": "3830 34th Ave W, Seattle, WA 98199",
+            "coords": {
+              "lat": 47.6552831,
+              "lng": -122.4005524
+            }
+          },
+          {
+            "title": "GREAT HARVEST BREAD CO.",
+            "address": "4416 Fremont Ave N, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6604793,
+              "lng": -122.349641656484
+            }
+          },
+          {
+            "title": "MARKETIME FOODS",
+            "address": "4416 Fremont Ave N, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6604793,
+              "lng": -122.349641656484
+            }
+          },
+          {
+            "title": "QFC:QFC #869",
+            "address": "1801 NORTH 45TH STREET, Seattle, WA 98103",
+            "coords": {
+              "lat": 47.6617288,
+              "lng": -122.335989
+            }
+          },
+          {
+            "title": "PCC:BALLARD#190",
+            "address": "1451 NW 46TH ST., Seattle, WA 98107",
+            "coords": {
+              "lat": 47.6618685499999,
+              "lng": -122.375582825317
+            }
+          },
+          {
+            "title": "QFC:QFC #807",
+            "address": "2746 NE 45TH STREET, Seattle, WA 98105",
+            "coords": {
+              "lat": 47.6622402,
+              "lng": -122.2964413
+            }
+          },
+          {
+            "title": "MET MARKET KIRKLAND",
+            "address": "10611 NE 68th St, Kirkland, WA 98033",
+            "coords": {
+              "lat": 47.6658576,
+              "lng": -122.1972297
+            }
+          },
+          {
+            "title": "PCC:KIRKLAND #20",
+            "address": "10718 NE 68TH, Kirkland, WA 98033-7030",
+            "coords": {
+              "lat": 47.6673526,
+              "lng": -122.1973979
+            }
+          },
+          {
+            "title": "CAFFE UMBRIA:BALLARD",
+            "address": "5407 Ballard Ave NW, Seattle, WA 98107",
+            "coords": {
+              "lat": 47.6675718,
+              "lng": -122.3850091
+            }
+          },
+          {
+            "title": "MET MARKET SAND POINT",
+            "address": "5250 40th Ave NE, Seattle, WA 98105",
+            "coords": {
+              "lat": 47.6681887,
+              "lng": -122.283618222132
+            }
+          },
+          {
+            "title": "PCC:VIEW RIDGE #50",
+            "address": "6514 40th Ave NE, Seattle, WA 98115",
+            "coords": {
+              "lat": 47.6761289,
+              "lng": -122.284355
+            }
+          },
+          {
+            "title": "PCC:REDMOND #120",
+            "address": "11435 AVONDALE RD, Redmond, WA 98052",
+            "coords": {
+              "lat": 47.6774665,
+              "lng": -122.105863
+            }
+          },
+          {
+            "title": "QFC:QFC #894",
+            "address": "425 URBAN PLAZA, Kirkland, WA 98033",
+            "coords": {
+              "lat": 47.6784954,
+              "lng": -122.1985533
+            }
+          },
+          {
+            "title": "PCC:VILLAGE #140",
+            "address": "450 NE 71ST ST, Seattle, WA 98115",
+            "coords": {
+              "lat": 47.6803721,
+              "lng": -122.3235175
+            }
+          },
+          {
+            "title": "PCC:AURORA #90",
+            "address": "7504 AURORA AVE N, Seattle, WA 98103-5358",
+            "coords": {
+              "lat": 47.683542,
+              "lng": -122.344097120798
+            }
+          },
+          {
+            "title": "LARSEN'S DANISH BAKERY",
+            "address": "8000 24TH AVE NW, Seattle, WA 98117",
+            "coords": {
+              "lat": 47.6869257,
+              "lng": -122.3873766
+            }
+          },
+          {
+            "title": "QFC:QFC #878",
+            "address": "23475 NE Novelty Hill Rd, Redmond, WA 98053",
+            "coords": {
+              "lat": 47.6891611,
+              "lng": -122.0888333
+            }
+          },
+          {
+            "title": "DIVA ESPRESSO - BROADVIEW",
+            "address": "14419 Greenwood Ave N, Seattle, WA 98113",
+            "coords": {
+              "lat": 47.6906007,
+              "lng": -122.3552927
+            }
+          },
+          {
+            "title": "QFC:QFC #858",
+            "address": "1531 NE 145TH STREET, Seattle, WA 98155",
+            "coords": {
+              "lat": 47.7333469,
+              "lng": -122.310498
+            }
+          },
+          {
+            "title": "QFC:QFC #850",
+            "address": "22833 BOTHELL-EVERETT HWY, BOTHELL, WA 98201",
+            "coords": {
+              "lat": 47.7905746,
+              "lng": -122.216780132967
+            }
+          },
+          {
+            "title": "QFC:QFC #851",
+            "address": "22828 100TH AVENUE WEST, EDMONDS, WA 98020",
+            "coords": {
+              "lat": 47.7913908,
+              "lng": -122.367839392754
+            }
+          },
+          {
+            "title": "PCC:EDMONDS #130",
+            "address": "9803 EDMONDS WAY, EDMONDS, WA 98020-5901",
+            "coords": {
+              "lat": 47.79146625,
+              "lng": -122.366010725812
+            }
+          },
+          {
+            "title": "PCC:BOTHELL #160",
+            "address": "22621 BOTHELL EVERETT HWY, BOTHELL, WA 98021",
+            "coords": {
+              "lat": 47.7927416,
+              "lng": -122.2143822
+            }
+          },
+          {
+            "title": "QFC:QFC #832",
+            "address": "11700 MUKILTEO SPEEDWAY, MUKILTEO, WA 98275",
+            "coords": {
+              "lat": 47.8924804993225,
+              "lng": -122.28657802421
+            }
+          },
+          {
+            "title": "QFC:QFC #852",
+            "address": "4919 EVERGREEN WAY, EVERETT, WA 98032",
+            "coords": {
+              "lat": 47.9534237786957,
+              "lng": -122.213237628522
+            }
+          },
+          {
+            "title": "QFC:QFC #853",
+            "address": "2615 N BROADWAY AVENUE, EVERETT, WA 98201",
+            "coords": {
+              "lat": 48.0031286,
+              "lng": -122.2006842
+            }
+          },
+          {
+            "title": "CHIMACUM FARM STAND",
+            "address": "9122 Rhody Dr., Chimacum, WA 98325",
+            "coords": {
+              "lat": 48.0117364,
+              "lng": -122.7693295
+            }
+          },
+          {
+            "title": "QFC:QFC #870",
+            "address": "1890 IRONDALE ROAD, PORT HADLOCK, WA 98339",
+            "coords": {
+              "lat": 48.0325089787919,
+              "lng": -122.757732587706
+            }
+          },
+          {
+            "title": "QFC:QFC #879",
+            "address": "27008 92nd Ave NW, Stanwood, WA 98292",
+            "coords": {
+              "lat": 48.2414871940843,
+              "lng": -122.357524732278
+            }
+          },
+          {
+            "title": "FOOD CO-OP DOWNTOWN",
+            "address": "1220 N Forest St, Bellingham, WA 98225",
+            "coords": {
+              "lat": 48.7473543499999,
+              "lng": -122.47621811339
+            }
+          },
+          {
+            "title": "ROME GROCERY",
+            "address": "2908 Mt Baker Hwy, Bellingham, WA 98226",
+            "coords": {
+              "lat": 48.7901943,
+              "lng": -122.421065
+            }
+          },
+          {
+            "title": "FOOD CO-OP CORDATA",
+            "address": "315 Westerly Rd, Bellingham, WA 98226",
+            "coords": {
+              "lat": 48.7915273,
+              "lng": -122.492402015983
+            }
+          }
         ],
-        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+        "mapOptions": {
+          "center": {
+            "lat": 38.0,
+            "lng": -100.0
+          },
+          "fullscreenControl": true,
+          "mapTypeControl": false,
+          "streetViewControl": false,
+          "zoom": 4,
+          "zoomControl": true,
+          "maxZoom": 17
+        },
         "mapsApiKey": "AIzaSyBdzF6nfU58olv8ah3ov6yzO73ab3i-GUM"
       };
 
       function initMap() {
         new LocatorPlus(CONFIGURATION);
       }
+
     </script>
+    <script src="apps.js"></script>
     <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
       {{#each locations}}
         <li class="location-result" data-location-index="{{index}}">
           <button class="select-location">
             <h2 class="name">{{title}}</h2>
           </button>
-          <div class="address">{{address1}}<br>{{address2}}</div>
+          <div class="address">{{address}}</div>
           <button class="details-button">
             View details
           </button>
@@ -1484,11 +1976,10 @@
           {{/if}}
           {{#if ../showDirectionsButton}}
             <button class="show-directions" title="Show directions to this location">
-              <svg width="34" height="34" viewBox="0 0 34 34"
-                   fill="none" xmlns="http://www.w3.org/2000/svg" alt="Show directions">
-                <path d="M17.5867 9.24375L17.9403 8.8902V8.8902L17.5867 9.24375ZM16.4117 9.24375L16.7653 9.59731L16.7675 9.59502L16.4117 9.24375ZM8.91172 16.7437L8.55817 16.3902L8.91172 16.7437ZM8.91172 17.9229L8.55817 18.2765L8.55826 18.2766L8.91172 17.9229ZM16.4117 25.4187H16.9117V25.2116L16.7652 25.0651L16.4117 25.4187ZM16.4117 25.4229H15.9117V25.63L16.0582 25.7765L16.4117 25.4229ZM25.0909 17.9229L25.4444 18.2765L25.4467 18.2742L25.0909 17.9229ZM25.4403 16.3902L17.9403 8.8902L17.2332 9.5973L24.7332 17.0973L25.4403 16.3902ZM17.9403 8.8902C17.4213 8.3712 16.5737 8.3679 16.0559 8.89248L16.7675 9.59502C16.8914 9.4696 17.1022 9.4663 17.2332 9.5973L17.9403 8.8902ZM16.0582 8.8902L8.55817 16.3902L9.26527 17.0973L16.7653 9.5973L16.0582 8.8902ZM8.55817 16.3902C8.0379 16.9105 8.0379 17.7562 8.55817 18.2765L9.26527 17.5694C9.13553 17.4396 9.13553 17.227 9.26527 17.0973L8.55817 16.3902ZM8.55826 18.2766L16.0583 25.7724L16.7652 25.0651L9.26517 17.5693L8.55826 18.2766ZM15.9117 25.4187V25.4229H16.9117V25.4187H15.9117ZM16.0582 25.7765C16.5784 26.2967 17.4242 26.2967 17.9444 25.7765L17.2373 25.0694C17.1076 25.1991 16.895 25.1991 16.7653 25.0694L16.0582 25.7765ZM17.9444 25.7765L25.4444 18.2765L24.7373 17.5694L17.2373 25.0694L17.9444 25.7765ZM25.4467 18.2742C25.9631 17.7512 25.9663 16.9096 25.438 16.3879L24.7354 17.0995C24.8655 17.2279 24.8687 17.4363 24.7351 17.5716L25.4467 18.2742Z" fill="#7e7efd"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19.8333V17.75H15.6667V20.25H14V16.9167C14 16.4542 14.3708 16.0833 14.8333 16.0833H19V14L21.9167 16.9167L19 19.8333Z" fill="#7e7efd"/>
-                <circle cx="17" cy="17" r="16.5" stroke="#7e7efd"/>
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Show directions">
+                <path d="M17.5867 9.24375L17.9403 8.8902V8.8902L17.5867 9.24375ZM16.4117 9.24375L16.7653 9.59731L16.7675 9.59502L16.4117 9.24375ZM8.91172 16.7437L8.55817 16.3902L8.91172 16.7437ZM8.91172 17.9229L8.55817 18.2765L8.55826 18.2766L8.91172 17.9229ZM16.4117 25.4187H16.9117V25.2116L16.7652 25.0651L16.4117 25.4187ZM16.4117 25.4229H15.9117V25.63L16.0582 25.7765L16.4117 25.4229ZM25.0909 17.9229L25.4444 18.2765L25.4467 18.2742L25.0909 17.9229ZM25.4403 16.3902L17.9403 8.8902L17.2332 9.5973L24.7332 17.0973L25.4403 16.3902ZM17.9403 8.8902C17.4213 8.3712 16.5737 8.3679 16.0559 8.89248L16.7675 9.59502C16.8914 9.4696 17.1022 9.4663 17.2332 9.5973L17.9403 8.8902ZM16.0582 8.8902L8.55817 16.3902L9.26527 17.0973L16.7653 9.5973L16.0582 8.8902ZM8.55817 16.3902C8.0379 16.9105 8.0379 17.7562 8.55817 18.2765L9.26527 17.5694C9.13553 17.4396 9.13553 17.227 9.26527 17.0973L8.55817 16.3902ZM8.55826 18.2766L16.0583 25.7724L16.7652 25.0651L9.26517 17.5693L8.55826 18.2766ZM15.9117 25.4187V25.4229H16.9117V25.4187H15.9117ZM16.0582 25.7765C16.5784 26.2967 17.4242 26.2967 17.9444 25.7765L17.2373 25.0694C17.1076 25.1991 16.895 25.1991 16.7653 25.0694L16.0582 25.7765ZM17.9444 25.7765L25.4444 18.2765L24.7373 17.5694L17.2373 25.0694L17.9444 25.7765ZM25.4467 18.2742C25.9631 17.7512 25.9663 16.9096 25.438 16.3879L24.7354 17.0995C24.8655 17.2279 24.8687 17.4363 24.7351 17.5716L25.4467 18.2742Z" fill="#7e7efd" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19.8333V17.75H15.6667V20.25H14V16.9167C14 16.4542 14.3708 16.0833 14.8333 16.0833H19V14L21.9167 16.9167L19 19.8333Z" fill="#7e7efd" />
+                <circle cx="17" cy="17" r="16.5" stroke="#7e7efd" />
               </svg>
             </button>
           {{/if}}
@@ -1586,20 +2077,21 @@
       {{/if}}
     </script>
   </head>
+
   <body>
     <div id="map-container">
       <div id="locations-panel">
         <div id="locations-panel-list">
           <header>
             <h1 class="search-title">
-              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
+              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg" />
               Find a location near you
             </h1>
             <div class="search-input">
               <input id="location-search-input" placeholder="Enter your address or zip code">
               <div id="search-overlay-search" class="search-input-overlay search">
                 <button id="location-search-button">
-                  <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
+                  <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search" />
                 </button>
               </div>
             </div>
@@ -1616,6 +2108,6 @@
       <div id="map"></div>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdzF6nfU58olv8ah3ov6yzO73ab3i-GUM&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE" async defer></script>
-    <script src="./apps.js"></script>
   </body>
+
 </html>
